@@ -54,7 +54,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 border-t border-[#E5E2DC] dark:border-[#2A2A2A] relative">
+    <section id="contact" className="py-20 sm:py-24 border-t border-[#E5E2DC] relative">
       {/* Toast popup */}
       <Toast
         message="Email copied to clipboard!"
@@ -78,27 +78,27 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Left Column: Direct Details */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="p-6 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] space-y-5 shadow-xs">
+              <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] space-y-5 shadow-xs">
                 {/* Email Item with Copy */}
                 <div>
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 block mb-1">
                     // Direct Email
                   </span>
                   <div className="flex items-center justify-between gap-2">
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-xs sm:text-sm font-mono text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-blue-600 dark:hover:text-blue-400 break-all transition-colors"
+                      className="text-xs sm:text-sm font-mono text-[#1A1A1A] hover:text-blue-600 break-all transition-colors"
                     >
                       {personalInfo.email}
                     </a>
                     <button
                       onClick={handleCopyEmail}
-                      className="p-1.5 rounded-md border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-[#8A8A8A] hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-600/50 transition-colors shrink-0 cursor-pointer shadow-xs"
+                      className="p-1.5 rounded-md border border-[#E5E2DC] bg-[#FAFAF8] text-[#8A8A8A] hover:text-blue-600 hover:border-blue-600/50 transition-colors shrink-0 cursor-pointer shadow-xs"
                       title="Copy Email Address"
                       aria-label="Copy Email Address"
                     >
                       {copied ? (
-                        <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                        <Check className="w-4 h-4 text-blue-600" />
                       ) : (
                         <Copy className="w-4 h-4" />
                       )}
@@ -107,21 +107,21 @@ export default function Contact() {
                 </div>
 
                 {/* Phone Item */}
-                <div className="pt-4 border-t border-[#E5E2DC] dark:border-[#2A2A2A]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
+                <div className="pt-4 border-t border-[#E5E2DC]">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 block mb-1">
                     // Phone Number
                   </span>
                   <a
                     href={`tel:${personalInfo.phone}`}
-                    className="text-xs sm:text-sm font-mono text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-xs sm:text-sm font-mono text-[#1A1A1A] hover:text-blue-600 transition-colors"
                   >
                     {personalInfo.phone}
                   </a>
                 </div>
 
                 {/* Location Item */}
-                <div className="pt-4 border-t border-[#E5E2DC] dark:border-[#2A2A2A]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
+                <div className="pt-4 border-t border-[#E5E2DC]">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 block mb-1">
                     // Current Location
                   </span>
                   <span className="text-xs sm:text-sm font-mono text-[#8A8A8A]">
@@ -131,7 +131,7 @@ export default function Contact() {
               </div>
 
               {/* Social Channels Card */}
-              <div className="p-6 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] shadow-xs">
+              <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A] block mb-3">
                   // Social Profiles
                 </span>
@@ -140,9 +140,9 @@ export default function Contact() {
                     href={personalInfo.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
+                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 transition-colors group"
                   >
-                    <GithubIcon className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
+                    <GithubIcon className="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform" />
                     <span>github.com/dabaskrishna</span>
                   </a>
 
@@ -150,9 +150,9 @@ export default function Contact() {
                     href={personalInfo.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
+                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 transition-colors group"
                   >
-                    <LinkedinIcon className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
+                    <LinkedinIcon className="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform" />
                     <span>linkedin.com/in/krishna-dabas</span>
                   </a>
                 </div>
@@ -163,7 +163,7 @@ export default function Contact() {
             <div className="lg:col-span-3">
               <form
                 onSubmit={handleSubmit}
-                className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] space-y-4 shadow-xs"
+                className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] space-y-4 shadow-xs"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name Input */}
@@ -172,7 +172,7 @@ export default function Contact() {
                       htmlFor="name"
                       className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                     >
-                      Name <span className="text-blue-600 dark:text-blue-400">*</span>
+                      Name <span className="text-blue-600">*</span>
                     </label>
                     <input
                       type="text"
@@ -182,7 +182,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Your full name"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all shadow-xs"
+                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-blue-600 focus:outline-none transition-all shadow-xs"
                     />
                   </div>
 
@@ -192,7 +192,7 @@ export default function Contact() {
                       htmlFor="email"
                       className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                     >
-                      Email <span className="text-blue-600 dark:text-blue-400">*</span>
+                      Email <span className="text-blue-600">*</span>
                     </label>
                     <input
                       type="email"
@@ -202,7 +202,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="your.email@example.com"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all shadow-xs"
+                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-blue-600 focus:outline-none transition-all shadow-xs"
                     />
                   </div>
                 </div>
@@ -222,7 +222,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Internship opportunity / Collaboration / Quick hello"
-                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all shadow-xs"
+                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-blue-600 focus:outline-none transition-all shadow-xs"
                   />
                 </div>
 
@@ -232,7 +232,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                   >
-                    Message <span className="text-blue-600 dark:text-blue-400">*</span>
+                    Message <span className="text-blue-600">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -242,7 +242,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Tell me about your project, idea, or role..."
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all resize-y shadow-xs"
+                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-blue-600 focus:outline-none transition-all resize-y shadow-xs"
                   />
                 </div>
 
@@ -264,8 +264,8 @@ export default function Contact() {
                   </button>
 
                   {submitted && (
-                    <span className="text-xs font-mono text-blue-600 dark:text-blue-400 flex items-center gap-1.5 font-medium">
-                      <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                    <span className="text-xs font-mono text-blue-600 flex items-center gap-1.5 font-medium">
+                      <Check className="w-4 h-4 text-blue-600" />
                       Message dispatched!
                     </span>
                   )}
