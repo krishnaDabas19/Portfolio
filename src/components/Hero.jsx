@@ -5,10 +5,10 @@ import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 import IsometricBlueprintGrid from './IsometricBlueprintGrid';
 import { HeroSvgBrackets } from './SvgLineDraw';
+import profilePhoto from '../assets/profile.jpg';
 
 export default function Hero() {
-  const [imgSrc, setImgSrc] = useState('./assets/profile.jpg');
-
+  const [imgSrc, setImgSrc] = useState(profilePhoto);
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -53,7 +53,7 @@ export default function Hero() {
                   src={imgSrc}
                   alt={personalInfo.name}
                   className="w-full h-full object-cover"
-                  onError={() => setImgSrc('/assets/profile.svg')}
+                  onError={() => setImgSrc('./assets/profile.jpg')}
                 />
               </div>
 
