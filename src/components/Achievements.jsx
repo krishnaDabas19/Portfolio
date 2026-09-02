@@ -9,16 +9,16 @@ export default function Achievements() {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'Trophy':
-        return <Trophy className="w-5 h-5 text-teal-400" />;
+        return <Trophy className="w-5 h-5 text-blue-600 dark:text-blue-400" />;
       case 'Code2':
-        return <Code2 className="w-5 h-5 text-teal-400" />;
+        return <Code2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />;
       default:
-        return <Sparkles className="w-5 h-5 text-teal-400" />;
+        return <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400" />;
     }
   };
 
   return (
-    <section id="achievements" className="py-20 sm:py-24 border-t border-white/[0.08] relative">
+    <section id="achievements" className="py-20 sm:py-24 border-t border-[#E5E2DC] dark:border-[#2A2A2A] relative">
       <div className="editorial-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,34 +37,34 @@ export default function Achievements() {
             {achievementsData.map((item, index) => (
               <div
                 key={item.id}
-                className="p-6 sm:p-7 rounded-2xl border border-white/[0.08] bg-[#12121A] hover:border-teal-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+                className="p-6 sm:p-7 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] hover:border-blue-600 dark:hover:border-blue-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-xs hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-11 h-11 rounded-xl border border-white/[0.08] bg-[#161B22] flex items-center justify-center group-hover:border-teal-400/40 group-hover:shadow-[0_0_15px_rgba(20,184,166,0.25)] transition-all">
+                    <div className="w-11 h-11 rounded-xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] flex items-center justify-center group-hover:border-blue-600/40 transition-all">
                       {getIcon(item.icon)}
                     </div>
 
-                    <span className="font-mono text-[11px] text-teal-400/80 font-bold">
+                    <span className="font-mono text-[11px] text-blue-600 dark:text-blue-400 font-bold">
                       0{index + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-heading font-semibold text-[#FFFFFF] mb-2 group-hover:text-teal-400 transition-colors">
+                  <h3 className="text-base font-heading font-semibold text-[#1A1A1A] dark:text-[#FFFFFF] mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm font-body text-[#9CA3AF] leading-relaxed">
+                  <p className="text-xs sm:text-sm font-body text-[#8A8A8A] dark:text-[#9CA3AF] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                {/* Counter / Metric Badge with Teal */}
-                <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-baseline justify-between">
-                  <span className="font-mono text-xs text-[#9CA3AF]">
+                {/* Counter / Metric Badge */}
+                <div className="mt-6 pt-4 border-t border-[#E5E2DC] dark:border-[#2A2A2A] flex items-baseline justify-between">
+                  <span className="font-mono text-xs text-[#8A8A8A]">
                     {item.metricLabel}
                   </span>
-                  <div className="text-xl font-bold font-mono text-teal-400">
+                  <div className="text-xl font-bold font-mono text-blue-600 dark:text-blue-400">
                     {item.metric === '50+' ? (
                       <AnimatedCounter target="50" suffix="+" />
                     ) : item.metric === '100%' ? (

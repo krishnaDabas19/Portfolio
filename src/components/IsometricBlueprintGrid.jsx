@@ -21,7 +21,7 @@ export default function IsometricBlueprintGrid() {
 
   return (
     <div
-      className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none opacity-70"
+      className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none opacity-60 dark:opacity-40"
       aria-hidden="true"
     >
       {/* 3D Isometric Perspective Blueprint Container */}
@@ -48,14 +48,16 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 50 0 L 0 0 0 50"
                 fill="none"
-                stroke="rgba(255, 255, 255, 0.05)"
+                stroke="currentColor"
                 strokeWidth="1"
+                className="text-[#E5E2DC] dark:text-[#2A2A2A]"
               />
               <circle
                 cx="0"
                 cy="0"
                 r="1"
-                fill="rgba(20, 184, 166, 0.25)"
+                fill="#2563EB"
+                fillOpacity="0.3"
               />
             </pattern>
 
@@ -73,13 +75,14 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 150 0 L 0 0 0 150"
                 fill="none"
-                stroke="rgba(20, 184, 166, 0.15)"
+                stroke="#2563EB"
+                strokeOpacity="0.2"
                 strokeWidth="1.2"
               />
             </pattern>
 
             <linearGradient id="gridFade" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
               <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.35" />
               <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
             </linearGradient>
@@ -104,7 +107,8 @@ export default function IsometricBlueprintGrid() {
               y1="400"
               x2="750"
               y2="400"
-              stroke="rgba(20, 184, 166, 0.3)"
+              stroke="#2563EB"
+              strokeOpacity="0.3"
               strokeWidth="1.2"
               strokeDasharray="6 4"
             />
@@ -113,7 +117,8 @@ export default function IsometricBlueprintGrid() {
               y1="50"
               x2="400"
               y2="750"
-              stroke="rgba(20, 184, 166, 0.3)"
+              stroke="#2563EB"
+              strokeOpacity="0.3"
               strokeWidth="1.2"
               strokeDasharray="6 4"
             />
@@ -123,7 +128,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="410"
             y="70"
-            fill="#14B8A6"
+            fill="#2563EB"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -135,7 +140,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="600"
             y="390"
-            fill="#14B8A6"
+            fill="#2563EB"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -147,26 +152,26 @@ export default function IsometricBlueprintGrid() {
           <text
             x="60"
             y="420"
-            fill="#9CA3AF"
+            fill="#8A8A8A"
             fontSize="8"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.05em"
-            opacity="0.6"
+            opacity="0.7"
           >
             LATENCY: 0.2ms // THREAD: MAIN
           </text>
         </svg>
 
-        {/* Pulsing Neural Nodes at Grid Intersections */}
-        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-teal-400" />
-        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-teal-300" />
-        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-emerald-400" />
-        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-teal-400" />
-        <div className="absolute top-[450px] left-[450px] pulse-node-5 w-2 h-2 rounded-full bg-teal-300" />
+        {/* Pulsing Connection Nodes */}
+        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400" />
+        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-blue-500" />
+        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-blue-600" />
+        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-blue-500" />
+        <div className="absolute top-[450px] left-[450px] pulse-node-5 w-2 h-2 rounded-full bg-blue-600" />
 
         {/* Connecting node lines */}
-        <div className="absolute top-[204px] left-[354px] w-[150px] h-[150px] border-t border-l border-teal-500/20 pointer-events-none" />
-        <div className="absolute top-[354px] left-[304px] w-[200px] h-[150px] border-b border-r border-teal-500/20 pointer-events-none" />
+        <div className="absolute top-[204px] left-[354px] w-[150px] h-[150px] border-t border-l border-blue-600/20 pointer-events-none" />
+        <div className="absolute top-[354px] left-[304px] w-[200px] h-[150px] border-b border-r border-blue-600/20 pointer-events-none" />
       </div>
     </div>
   );

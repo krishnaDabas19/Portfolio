@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { personalInfo, navLinks } from '../data/portfolioData';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        return true;
+      }
+    }
+    return false;
+  });
+
+
+  const toggleTheme = () => {
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +68,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'py-2.5 bg-[#0A0A0F]/90 backdrop-blur-md border-b border-white/[0.08] shadow-lg shadow-black/30'
+          ? 'py-3 bg-[#FAFAF8]/90 dark:bg-[#121212]/90 backdrop-blur-md border-b border-[#E5E2DC] dark:border-[#2A2A2A] shadow-sm'
           : 'py-5 bg-transparent'
       }`}
     >
@@ -56,12 +79,12 @@ export default function Navbar() {
           className="group flex items-center gap-2.5 focus:outline-none cursor-pointer"
           aria-label="Scroll to top"
         >
-          <div className="w-8 h-8 rounded-full border border-white/[0.12] bg-[#12121A] group-hover:border-teal-400/60 flex items-center justify-center transition-all duration-200">
-            <span className="font-mono text-xs font-bold tracking-tight text-teal-400 group-hover:text-teal-300">
+          <div className="w-8 h-8 rounded-full border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] group-hover:border-blue-600 dark:group-hover:border-blue-400 flex items-center justify-center shadow-xs transition-all duration-200">
+            <span className="font-mono text-xs font-bold tracking-tight text-blue-600 dark:text-blue-400">
               {personalInfo.initials}
             </span>
           </div>
-          <span className="font-mono text-xs text-[#9CA3AF] group-hover:text-[#FFFFFF] hidden sm:inline-block transition-colors">
+          <span className="font-mono text-xs text-[#8A8A8A] group-hover:text-[#1A1A1A] dark:group-hover:text-[#FFFFFF] hidden sm:inline-block transition-colors">
             krishna.dev
           </span>
         </button>
@@ -76,15 +99,15 @@ export default function Navbar() {
                 onClick={() => handleNavClick(link.id)}
                 className={`relative py-1 text-xs font-mono uppercase tracking-wider transition-colors duration-200 cursor-pointer group ${
                   isActive
-                    ? 'text-teal-400 font-semibold'
-                    : 'text-[#9CA3AF] hover:text-[#FFFFFF]'
+                    ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                    : 'text-[#8A8A8A] hover:text-[#1A1A1A] dark:hover:text-[#FFFFFF]'
                 }`}
               >
                 {link.label}
-                {/* Clean Teal Underline on hover and active */}
+                {/* Active Underline in Cobalt Blue */}
                 <span
-                  className={`absolute left-0 bottom-0 h-[1.5px] bg-teal-400 transition-all duration-200 ${
-                    isActive ? 'w-full shadow-[0_0_8px_rgba(20,184,166,0.8)]' : 'w-0 group-hover:w-full'
+                  className={`absolute left-0 bottom-0 h-[2px] bg-blue-600 dark:bg-blue-400 transition-all duration-200 ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
               </button>
@@ -92,20 +115,30 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Action Button / Status Badge */}
-        <div className="flex items-center gap-3">
+        {/* Action Button & Theme Toggle */}
+        <div className="flex items-center gap-2.5">
+          {/* Theme Switcher Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] text-[#8A8A8A] hover:text-[#1A1A1A] dark:hover:text-[#FFFFFF] transition-colors cursor-pointer shadow-xs"
+            title={isDark ? 'Switch to Light mode' : 'Switch to Dark mode'}
+            aria-label="Toggle Theme"
+          >
+            {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-blue-600" />}
+          </button>
+
           <button
             onClick={() => handleNavClick('contact')}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 text-xs font-mono font-medium transition-colors cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-blue-600/30 bg-blue-600/10 hover:bg-blue-600/15 text-blue-700 dark:text-blue-400 text-xs font-mono font-medium transition-colors cursor-pointer"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse" />
             <span>Open to Work</span>
           </button>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md border border-white/[0.08] bg-[#12121A] text-[#E5E7EB] hover:border-teal-500/40 cursor-pointer"
+            className="md:hidden p-2 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] text-[#1A1A1A] dark:text-[#FFFFFF] cursor-pointer shadow-xs"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -115,7 +148,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-white/[0.08] bg-[#0A0A0F]/95 backdrop-blur-xl px-6 py-4 animate-in slide-in-from-top duration-200">
+        <div className="md:hidden border-b border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8]/95 dark:bg-[#121212]/95 backdrop-blur-xl px-6 py-4 animate-in slide-in-from-top duration-200">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -124,12 +157,12 @@ export default function Navbar() {
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
                   className={`text-left py-2 text-sm font-mono flex items-center justify-between cursor-pointer ${
-                    isActive ? 'text-teal-400 font-semibold' : 'text-[#9CA3AF]'
+                    isActive ? 'text-blue-600 dark:text-blue-400 font-semibold' : 'text-[#8A8A8A]'
                   }`}
                 >
                   <span>// {link.label.toLowerCase()}</span>
                   {isActive && (
-                    <span className="w-2 h-2 rounded-full bg-teal-400 shadow-[0_0_6px_rgba(20,184,166,0.8)]" />
+                    <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400" />
                   )}
                 </button>
               );

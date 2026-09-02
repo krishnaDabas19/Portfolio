@@ -7,7 +7,7 @@ export default function Preloader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 900);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
@@ -18,23 +18,23 @@ export default function Preloader() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.35, ease: 'easeInOut' } }}
-          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-[#0A0A0F] text-[#FFFFFF]"
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-[#FAFAF8] dark:bg-[#121212] text-[#1A1A1A] dark:text-[#FFFFFF]"
         >
           <div className="flex flex-col items-center gap-4">
-            {/* KD Monogram Mark with Teal Border */}
+            {/* KD Monogram Mark */}
             <motion.div
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.25 }}
-              className="w-14 h-14 rounded-full border border-teal-500/40 bg-[#12121A] flex items-center justify-center shadow-[0_0_20px_rgba(20,184,166,0.35)]"
+              className="w-14 h-14 rounded-full border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] flex items-center justify-center shadow-md"
             >
-              <span className="font-heading text-lg font-bold tracking-tight text-teal-400">
+              <span className="font-heading text-lg font-bold tracking-tight text-blue-600 dark:text-blue-400">
                 KD
               </span>
             </motion.div>
 
             {/* Subtle Progress Line */}
-            <div className="w-32 h-[2px] bg-white/[0.08] overflow-hidden rounded-full mt-2">
+            <div className="w-32 h-[2px] bg-[#E5E2DC] dark:bg-[#2A2A2A] overflow-hidden rounded-full mt-2">
               <motion.div
                 initial={{ x: '-100%' }}
                 animate={{ x: '100%' }}
@@ -43,11 +43,11 @@ export default function Preloader() {
                   duration: 0.8,
                   ease: 'easeInOut',
                 }}
-                className="w-full h-full bg-teal-400"
+                className="w-full h-full bg-blue-600 dark:bg-blue-400"
               />
             </div>
 
-            <p className="font-mono text-xs text-[#9CA3AF] tracking-wider">
+            <p className="font-mono text-xs text-[#8A8A8A] tracking-wider">
               // initializing...
             </p>
           </div>

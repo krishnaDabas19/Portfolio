@@ -54,7 +54,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 border-t border-white/[0.08] relative">
+    <section id="contact" className="py-20 sm:py-24 border-t border-[#E5E2DC] dark:border-[#2A2A2A] relative">
       {/* Toast popup */}
       <Toast
         message="Email copied to clipboard!"
@@ -78,27 +78,27 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Left Column: Direct Details */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="p-6 rounded-2xl border border-white/[0.08] bg-[#12121A] space-y-5 shadow-xl">
+              <div className="p-6 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] space-y-5 shadow-xs">
                 {/* Email Item with Copy */}
                 <div>
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-teal-400 block mb-1">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
                     // Direct Email
                   </span>
                   <div className="flex items-center justify-between gap-2">
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-xs sm:text-sm font-mono text-[#FFFFFF] hover:text-teal-300 break-all transition-colors"
+                      className="text-xs sm:text-sm font-mono text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-blue-600 dark:hover:text-blue-400 break-all transition-colors"
                     >
                       {personalInfo.email}
                     </a>
                     <button
                       onClick={handleCopyEmail}
-                      className="p-1.5 rounded-md border border-white/[0.1] bg-[#161B22] text-[#9CA3AF] hover:text-teal-300 hover:border-teal-500/50 transition-colors shrink-0 cursor-pointer"
+                      className="p-1.5 rounded-md border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-[#8A8A8A] hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-600/50 transition-colors shrink-0 cursor-pointer shadow-xs"
                       title="Copy Email Address"
                       aria-label="Copy Email Address"
                     >
                       {copied ? (
-                        <Check className="w-4 h-4 text-teal-400" />
+                        <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       ) : (
                         <Copy className="w-4 h-4" />
                       )}
@@ -107,32 +107,32 @@ export default function Contact() {
                 </div>
 
                 {/* Phone Item */}
-                <div className="pt-4 border-t border-white/[0.06]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-teal-400 block mb-1">
+                <div className="pt-4 border-t border-[#E5E2DC] dark:border-[#2A2A2A]">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
                     // Phone Number
                   </span>
                   <a
                     href={`tel:${personalInfo.phone}`}
-                    className="text-xs sm:text-sm font-mono text-[#FFFFFF] hover:text-teal-300 transition-colors"
+                    className="text-xs sm:text-sm font-mono text-[#1A1A1A] dark:text-[#FFFFFF] hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {personalInfo.phone}
                   </a>
                 </div>
 
                 {/* Location Item */}
-                <div className="pt-4 border-t border-white/[0.06]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-teal-400 block mb-1">
+                <div className="pt-4 border-t border-[#E5E2DC] dark:border-[#2A2A2A]">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
                     // Current Location
                   </span>
-                  <span className="text-xs sm:text-sm font-mono text-[#9CA3AF]">
+                  <span className="text-xs sm:text-sm font-mono text-[#8A8A8A]">
                     {personalInfo.location}, India
                   </span>
                 </div>
               </div>
 
               {/* Social Channels Card */}
-              <div className="p-6 rounded-2xl border border-white/[0.08] bg-[#12121A] shadow-xl">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#9CA3AF] block mb-3">
+              <div className="p-6 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] shadow-xs">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A] block mb-3">
                   // Social Profiles
                 </span>
                 <div className="flex flex-col gap-3">
@@ -140,9 +140,9 @@ export default function Contact() {
                     href={personalInfo.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-xs font-mono text-[#9CA3AF] hover:text-teal-300 transition-colors group"
+                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
                   >
-                    <GithubIcon className="w-4 h-4 text-teal-400 group-hover:scale-110 transition-transform" />
+                    <GithubIcon className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
                     <span>github.com/dabaskrishna</span>
                   </a>
 
@@ -150,9 +150,9 @@ export default function Contact() {
                     href={personalInfo.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-xs font-mono text-[#9CA3AF] hover:text-teal-300 transition-colors group"
+                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
                   >
-                    <LinkedinIcon className="w-4 h-4 text-teal-400 group-hover:scale-110 transition-transform" />
+                    <LinkedinIcon className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
                     <span>linkedin.com/in/krishna-dabas</span>
                   </a>
                 </div>
@@ -163,16 +163,16 @@ export default function Contact() {
             <div className="lg:col-span-3">
               <form
                 onSubmit={handleSubmit}
-                className="p-6 sm:p-8 rounded-2xl border border-white/[0.08] bg-[#12121A] space-y-4 shadow-xl"
+                className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] space-y-4 shadow-xs"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name Input */}
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#9CA3AF] mb-1.5"
+                      className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                     >
-                      Name <span className="text-teal-400">*</span>
+                      Name <span className="text-blue-600 dark:text-blue-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -182,7 +182,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Your full name"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-white/[0.08] bg-[#161B22] text-xs sm:text-sm text-[#FFFFFF] placeholder-[#6B7280] focus:border-teal-400 focus:shadow-[0_0_15px_rgba(20,184,166,0.2)] focus:outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all shadow-xs"
                     />
                   </div>
 
@@ -190,9 +190,9 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#9CA3AF] mb-1.5"
+                      className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                     >
-                      Email <span className="text-teal-400">*</span>
+                      Email <span className="text-blue-600 dark:text-blue-400">*</span>
                     </label>
                     <input
                       type="email"
@@ -202,7 +202,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="your.email@example.com"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-white/[0.08] bg-[#161B22] text-xs sm:text-sm text-[#FFFFFF] placeholder-[#6B7280] focus:border-teal-400 focus:shadow-[0_0_15px_rgba(20,184,166,0.2)] focus:outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all shadow-xs"
                     />
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-xs font-mono uppercase tracking-wider text-[#9CA3AF] mb-1.5"
+                    className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                   >
                     Subject
                   </label>
@@ -222,7 +222,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Internship opportunity / Collaboration / Quick hello"
-                    className="w-full px-4 py-3 rounded-lg border border-white/[0.08] bg-[#161B22] text-xs sm:text-sm text-[#FFFFFF] placeholder-[#6B7280] focus:border-teal-400 focus:shadow-[0_0_15px_rgba(20,184,166,0.2)] focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all shadow-xs"
                   />
                 </div>
 
@@ -230,9 +230,9 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-xs font-mono uppercase tracking-wider text-[#9CA3AF] mb-1.5"
+                    className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
                   >
-                    Message <span className="text-teal-400">*</span>
+                    Message <span className="text-blue-600 dark:text-blue-400">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -242,30 +242,30 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Tell me about your project, idea, or role..."
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-white/[0.08] bg-[#161B22] text-xs sm:text-sm text-[#FFFFFF] placeholder-[#6B7280] focus:border-teal-400 focus:shadow-[0_0_15px_rgba(20,184,166,0.2)] focus:outline-none transition-all resize-y"
+                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FAFAF8] dark:bg-[#222222] text-xs sm:text-sm text-[#1A1A1A] dark:text-[#FFFFFF] placeholder-[#8A8A8A] focus:border-blue-600 dark:focus:border-blue-400 focus:outline-none transition-all resize-y shadow-xs"
                   />
                 </div>
 
                 {errorMessage && (
-                  <p className="text-xs text-rose-400 font-mono">
+                  <p className="text-xs text-rose-500 font-mono">
                     {errorMessage}
                   </p>
                 )}
 
-                {/* Submit Action Button with Teal Theme */}
+                {/* Submit Action Button */}
                 <div className="pt-2 flex items-center justify-between">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-lg shadow-teal-500/20 disabled:opacity-50 cursor-pointer active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-md shadow-blue-600/20 disabled:opacity-50 cursor-pointer active:scale-95 transition-all"
                   >
                     <Send className="w-4 h-4" />
                     <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                   </button>
 
                   {submitted && (
-                    <span className="text-xs font-mono text-teal-300 flex items-center gap-1.5">
-                      <Check className="w-4 h-4 text-teal-400" />
+                    <span className="text-xs font-mono text-blue-600 dark:text-blue-400 flex items-center gap-1.5 font-medium">
+                      <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       Message dispatched!
                     </span>
                   )}

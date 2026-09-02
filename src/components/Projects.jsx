@@ -14,7 +14,7 @@ export default function Projects() {
       : projectsData.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 sm:py-24 border-t border-white/[0.08] relative">
+    <section id="projects" className="py-20 sm:py-24 border-t border-[#E5E2DC] dark:border-[#2A2A2A] relative">
       <div className="editorial-container">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <TerminalHeading
@@ -25,15 +25,15 @@ export default function Projects() {
           />
 
           {/* Filter Tabs (All / Web Dev / C++/DSA) */}
-          <div className="flex items-center gap-1.5 p-1 rounded-lg border border-white/[0.08] bg-[#12121A] self-start sm:self-auto shadow-sm">
+          <div className="flex items-center gap-1.5 p-1 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] self-start sm:self-auto shadow-xs">
             {projectCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-3.5 py-1.5 rounded-md text-xs font-mono transition-all cursor-pointer ${
                   activeCategory === category
-                    ? 'bg-teal-600 text-white font-semibold shadow-md shadow-teal-500/20'
-                    : 'text-[#9CA3AF] hover:text-[#FFFFFF]'
+                    ? 'bg-blue-600 text-white font-semibold shadow-xs'
+                    : 'text-[#8A8A8A] hover:text-[#1A1A1A] dark:hover:text-[#FFFFFF]'
                 }`}
               >
                 {category}
@@ -44,7 +44,7 @@ export default function Projects() {
 
         {/* Project Cards with Scan Line Reveal */}
         <div className="space-y-8">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {filteredProjects.map((project, index) => (
               <motion.article
                 key={project.id}
@@ -52,35 +52,35 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.35, delay: index * 0.08 }}
-                className="scan-card group relative p-6 sm:p-8 rounded-2xl transition-all duration-300 shadow-xl shadow-black/40"
+                className="scan-card group relative p-6 sm:p-8 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 {/* Card Header: Category Badge + Duration */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3 relative z-10">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20 font-medium">
-                      <FolderGit2 className="w-3.5 h-3.5 text-teal-400" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-blue-600/10 text-blue-700 dark:text-blue-400 border border-blue-600/20 font-medium">
+                      <FolderGit2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                       {project.categoryBadge}
                     </span>
                   </div>
 
-                  <span className="flex items-center gap-1.5 text-xs font-mono text-[#9CA3AF]">
-                    <Calendar className="w-3.5 h-3.5 text-teal-400" />
+                  <span className="flex items-center gap-1.5 text-xs font-mono text-[#8A8A8A]">
+                    <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                     {project.period}
                   </span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="mb-3 relative z-10">
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#FFFFFF] group-hover:text-teal-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#1A1A1A] dark:text-[#FFFFFF] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono text-teal-400/90 mt-0.5">
+                  <p className="text-xs font-mono text-blue-600 dark:text-blue-400 mt-0.5 font-medium">
                     {project.subtitle}
                   </p>
                 </div>
 
                 {/* What & Why Summary */}
-                <p className="text-sm font-body text-[#E5E7EB] leading-relaxed mb-4 relative z-10">
+                <p className="text-sm font-body text-[#3F3F3F] dark:text-[#D1D5DB] leading-relaxed mb-4 relative z-10">
                   {project.summary}
                 </p>
 
@@ -89,22 +89,22 @@ export default function Projects() {
                   {project.features.map((feature, fIdx) => (
                     <div
                       key={fIdx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm font-body text-[#9CA3AF]"
+                      className="flex items-start gap-2.5 text-xs sm:text-sm font-body text-[#3F3F3F] dark:text-[#D1D5DB]"
                     >
-                      <span className="text-teal-400 font-mono mt-0.5 font-bold">❯</span>
+                      <span className="text-blue-600 dark:text-blue-400 font-mono mt-0.5 font-bold">❯</span>
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Footer: Tech Stack Pills + Action Links */}
-                <div className="pt-4 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+                <div className="pt-4 border-t border-[#E5E2DC] dark:border-[#2A2A2A] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
                   {/* Tech Stack Pills */}
                   <div className="flex flex-wrap items-center gap-2">
                     {project.tech.map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#161B22] border border-white/[0.06] text-[#E5E7EB] hover:border-teal-400/40 hover:text-teal-300 transition-colors"
+                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#FAFAF8] dark:bg-[#222222] border border-[#E5E2DC] dark:border-[#2E2E2E] text-[#1A1A1A] dark:text-[#FFFFFF] hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                       >
                         {t}
                       </span>
@@ -117,7 +117,7 @@ export default function Projects() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-white/[0.1] bg-[#161B22] hover:border-teal-500/50 hover:text-teal-300 text-xs font-mono text-[#FFFFFF] transition-all"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 text-xs font-mono text-[#1A1A1A] dark:text-[#FFFFFF] transition-all shadow-xs"
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
                       <span>View Code</span>
@@ -127,7 +127,7 @@ export default function Projects() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-teal-600 hover:bg-teal-500 text-white text-xs font-mono transition-all font-semibold shadow-md shadow-teal-500/20"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono transition-all font-semibold shadow-xs"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Live Demo</span>

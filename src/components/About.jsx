@@ -7,7 +7,7 @@ import { SchematicDivider } from './SvgLineDraw';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-24 border-t border-white/[0.08] relative">
+    <section id="about" className="py-20 sm:py-24 border-t border-[#E5E2DC] dark:border-[#2A2A2A] relative">
       <div className="editorial-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,10 +22,10 @@ export default function About() {
           />
 
           {/* Main Bio Paragraphs */}
-          <div className="space-y-4 text-[#E5E7EB] text-sm sm:text-base font-body leading-relaxed max-w-3xl">
+          <div className="space-y-4 text-[#3F3F3F] dark:text-[#D1D5DB] text-sm sm:text-base font-body leading-relaxed max-w-3xl">
             <p>
               I am a Computer Science Engineering student specializing in{' '}
-              <strong className="text-teal-400 font-semibold">
+              <strong className="text-blue-600 dark:text-blue-400 font-semibold">
                 Artificial Intelligence & Machine Learning
               </strong>{' '}
               at Lovely Professional University. My focus lies in constructing robust web architectures, scalable backend services, and clean algorithmic foundations.
@@ -36,16 +36,16 @@ export default function About() {
           </div>
 
           {/* Currently Learning / Now Building Ticker Card */}
-          <div className="my-8 p-5 sm:p-6 rounded-xl border border-white/[0.08] bg-[#12121A] shadow-xl hover:border-teal-500/30 transition-colors">
-            <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-white/[0.06]">
+          <div className="my-8 p-5 sm:p-6 rounded-xl border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] shadow-xs hover:border-blue-600 dark:hover:border-blue-400 transition-colors">
+            <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[#E5E2DC] dark:border-[#2A2A2A]">
               <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-teal-400" />
-                <span className="font-mono text-xs uppercase tracking-wider text-teal-400 font-semibold">
+                <Terminal className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="font-mono text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold">
                   Now Building & Exploring
                 </span>
               </div>
-              <span className="inline-flex items-center gap-1 text-[11px] font-mono text-teal-400 bg-teal-400/10 px-2 py-0.5 rounded border border-teal-400/20">
-                <Sparkles className="w-3 h-3" />
+              <span className="inline-flex items-center gap-1 text-[11px] font-mono text-blue-700 dark:text-blue-400 bg-blue-600/10 px-2 py-0.5 rounded-full border border-blue-600/20">
+                <Sparkles className="w-3 h-3 text-blue-600 dark:text-blue-400" />
                 Active Focus
               </span>
             </div>
@@ -53,9 +53,9 @@ export default function About() {
               {nowBuilding.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2.5 text-xs font-mono text-[#E5E7EB]"
+                  className="flex items-center gap-2.5 text-xs font-mono text-[#3F3F3F] dark:text-[#D1D5DB]"
                 >
-                  <span className="text-teal-400 font-bold">❯</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">❯</span>
                   <span>{item}</span>
                 </div>
               ))}
@@ -64,16 +64,16 @@ export default function About() {
 
           {/* Soft Skills Badges */}
           <div className="mb-8">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-[#9CA3AF] mb-3">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-[#8A8A8A] mb-3">
               // Core Soft Skills
             </h3>
             <div className="flex flex-wrap gap-2.5">
               {softSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono border border-white/[0.08] bg-[#12121A] text-[#E5E7EB] hover:border-teal-500/50 hover:text-white transition-all hover:scale-105"
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono border border-[#E5E2DC] dark:border-[#2A2A2A] bg-[#FFFFFF] dark:bg-[#1A1A1A] text-[#1A1A1A] dark:text-[#FFFFFF] hover:border-blue-600 dark:hover:border-blue-400 transition-all hover:scale-105 shadow-xs"
                 >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                   <span>{skill}</span>
                 </div>
               ))}
@@ -87,7 +87,7 @@ export default function About() {
               download="Krishna_Dabas_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-teal-500/30 bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all hover:shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-blue-600/30 bg-blue-600/10 hover:bg-blue-600/15 text-blue-700 dark:text-blue-400 font-mono text-xs uppercase tracking-wider font-semibold transition-all hover:shadow-xs hover:-translate-y-0.5"
             >
               <FileDown className="w-4 h-4" />
               <span>Download Resume (PDF)</span>
