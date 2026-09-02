@@ -15,11 +15,11 @@ export default function About() {
       >
         {/* Section Header with Monospace Numbered Index */}
         <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-[#C2542D] font-bold uppercase tracking-widest">
+          <span className="font-mono text-xs text-[#B5654A] font-bold uppercase tracking-widest">
             // 01. narrative
           </span>
           <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
-          <span className="font-mono text-xs text-[#8A8A8A]">
+          <span className="font-mono text-xs text-[#7A8B5C] font-semibold">
             ABOUT ME
           </span>
         </div>
@@ -32,7 +32,7 @@ export default function About() {
         <div className="space-y-4 text-sm sm:text-base font-body text-[#3F3F3F] leading-relaxed max-w-2xl">
           <p>
             I am an undergraduate Computer Science Engineering student specializing in{' '}
-            <strong className="text-[#C2542D] font-semibold">Artificial Intelligence & Machine Learning</strong>{' '}
+            <strong className="text-[#B5654A] font-semibold">Artificial Intelligence & Machine Learning</strong>{' '}
             at Lovely Professional University. My work focuses on building reliable full-stack applications, designing clean APIs, and structuring memory-efficient algorithms.
           </p>
           <p>
@@ -42,12 +42,12 @@ export default function About() {
 
         {/* Location & University Snapshot Bar */}
         <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#8A8A8A] pt-2">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF]">
-            <MapPin className="w-3.5 h-3.5 text-[#C2542D]" />
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] shadow-2xs">
+            <MapPin className="w-3.5 h-3.5 text-[#B5654A]" />
             <span>{personalInfo.location}, India</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF]">
-            <Terminal className="w-3.5 h-3.5 text-[#C2542D]" />
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] shadow-2xs">
+            <Terminal className="w-3.5 h-3.5 text-[#7A8B5C]" />
             <span>{personalInfo.university}</span>
           </span>
         </div>
@@ -56,12 +56,12 @@ export default function About() {
         <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#E5E2DC]">
             <div className="flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-[#C2542D]" />
-              <span className="font-mono text-xs font-bold text-[#C2542D] uppercase tracking-wider">
+              <Terminal className="w-4 h-4 text-[#B5654A]" />
+              <span className="font-mono text-xs font-bold text-[#B5654A] uppercase tracking-wider">
                 Active Research & Builds
               </span>
             </div>
-            <span className="inline-flex items-center gap-1 font-mono text-[10px] text-[#C2542D] bg-[#C2542D]/10 px-2.5 py-0.5 rounded-full border border-[#C2542D]/20">
+            <span className="inline-flex items-center gap-1 font-mono text-[10px] text-[#7A8B5C] bg-[#7A8B5C]/10 px-2.5 py-0.5 rounded-full border border-[#7A8B5C]/20 font-semibold">
               <Sparkles className="w-3 h-3" />
               In Progress
             </span>
@@ -70,7 +70,7 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {nowBuilding.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2.5 text-xs font-mono text-[#3F3F3F]">
-                <span className="text-[#C2542D] font-bold">❯</span>
+                <span className="text-[#B5654A] font-bold">❯</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -79,16 +79,16 @@ export default function About() {
 
         {/* Core Soft Skills Badges */}
         <div>
-          <span className="font-mono text-xs uppercase tracking-wider text-[#8A8A8A] block mb-3">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A8B5C] font-semibold block mb-3">
             // Working Methodology
           </span>
           <div className="flex flex-wrap gap-2">
             {softSkills.map((skill, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] text-[#1A1A1A] text-xs font-mono shadow-xs hover:border-[#C2542D] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] text-[#1A1A1A] text-xs font-mono shadow-2xs hover:border-[#B5654A] transition-colors"
               >
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#C2542D]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#7A8B5C]" />
                 <span>{skill}</span>
               </span>
             ))}

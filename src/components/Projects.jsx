@@ -21,11 +21,11 @@ export default function Projects() {
       >
         {/* Section Header with Monospace Numbered Index */}
         <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-[#C2542D] font-bold uppercase tracking-widest">
+          <span className="font-mono text-xs text-[#B5654A] font-bold uppercase tracking-widest">
             // 03. archive
           </span>
           <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
-          <span className="font-mono text-xs text-[#8A8A8A]">
+          <span className="font-mono text-xs text-[#7A8B5C] font-semibold">
             INDEX CATALOGUE
           </span>
         </div>
@@ -52,14 +52,14 @@ export default function Projects() {
                   onMouseEnter={() => setSelectedProjectId(project.id)}
                   className={`w-full text-left p-4 sm:p-5 rounded-xl border transition-all cursor-pointer flex items-center justify-between group ${
                     isSelected
-                      ? 'border-[#C2542D] bg-[#FFFFFF] shadow-sm'
+                      ? 'border-[#B5654A] bg-[#FFFFFF] shadow-sm'
                       : 'border-[#E5E2DC] bg-[#FAFAF8] hover:bg-[#FFFFFF] hover:border-[#8A8A8A]'
                   }`}
                 >
                   <div className="flex items-baseline gap-4">
                     <span
                       className={`font-mono text-xs font-bold ${
-                        isSelected ? 'text-[#C2542D]' : 'text-[#8A8A8A]'
+                        isSelected ? 'text-[#B5654A]' : 'text-[#7A8B5C]'
                       }`}
                     >
                       {project.number}
@@ -68,8 +68,8 @@ export default function Projects() {
                       <h3
                         className={`text-lg sm:text-xl font-heading font-bold transition-colors ${
                           isSelected
-                            ? 'text-[#C2542D]'
-                            : 'text-[#1A1A1A] group-hover:text-[#C2542D]'
+                            ? 'text-[#B5654A]'
+                            : 'text-[#1A1A1A] group-hover:text-[#B5654A]'
                         }`}
                       >
                         {project.title}
@@ -83,7 +83,7 @@ export default function Projects() {
                   <span
                     className={`font-mono text-xs flex items-center gap-1 transition-all ${
                       isSelected
-                        ? 'text-[#C2542D] font-bold translate-x-0'
+                        ? 'text-[#B5654A] font-bold translate-x-0'
                         : 'text-[#8A8A8A] -translate-x-1 group-hover:translate-x-0'
                     }`}
                   >
@@ -108,17 +108,17 @@ export default function Projects() {
               {/* Dossier Header */}
               <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#E5E2DC]">
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-semibold bg-[#C2542D]/10 text-[#C2542D] border border-[#C2542D]/20">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-semibold bg-[#B5654A]/10 text-[#B5654A] border border-[#B5654A]/20">
                     <FolderGit2 className="w-3.5 h-3.5" />
                     {activeProject.categoryBadge}
                   </span>
-                  <span className="font-mono text-xs text-[#8A8A8A] hidden sm:inline">
-                    // DOSSIER_ID: {activeProject.id.toUpperCase()}
+                  <span className="font-mono text-xs text-[#7A8B5C] hidden sm:inline font-semibold">
+                    // DOSSIER: {activeProject.id.toUpperCase()}
                   </span>
                 </div>
 
                 <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#8A8A8A]">
-                  <Calendar className="w-3.5 h-3.5 text-[#C2542D]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#B5654A]" />
                   {activeProject.period}
                 </span>
               </div>
@@ -135,7 +135,7 @@ export default function Projects() {
 
               {/* Architectural Approach Note */}
               <div className="p-4 rounded-xl border border-[#E5E2DC] bg-[#FAFAF8]">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] font-bold block mb-1">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#B5654A] font-bold block mb-1">
                   // Architectural Design
                 </span>
                 <p className="font-mono text-xs text-[#3F3F3F] leading-relaxed">
@@ -145,13 +145,13 @@ export default function Projects() {
 
               {/* Key Implementation Highlights */}
               <div>
-                <span className="font-mono text-xs uppercase tracking-wider text-[#8A8A8A] block mb-2.5">
+                <span className="font-mono text-xs uppercase tracking-wider text-[#7A8B5C] font-semibold block mb-2.5">
                   // Key Deliverables
                 </span>
                 <div className="space-y-2">
                   {activeProject.features.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm font-body text-[#3F3F3F]">
-                      <CheckCircle className="w-4 h-4 text-[#C2542D] shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-[#7A8B5C] shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -178,7 +178,7 @@ export default function Projects() {
                     href={activeProject.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#C2542D] hover:text-[#C2542D] text-xs font-mono text-[#1A1A1A] transition-all shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#B5654A] hover:text-[#B5654A] text-xs font-mono text-[#1A1A1A] transition-all shadow-2xs"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                     <span>View Repository</span>
@@ -189,7 +189,7 @@ export default function Projects() {
                       href={activeProject.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#C2542D] hover:bg-[#A8421F] text-white text-xs font-mono transition-all font-semibold shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#B5654A] hover:bg-[#9E523A] text-white text-xs font-mono transition-all font-semibold shadow-xs"
                     >
                       <ArrowUpRight className="w-3.5 h-3.5" />
                       <span>Live Site</span>

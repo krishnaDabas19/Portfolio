@@ -6,9 +6,9 @@
     --bg: #FAFAF8;
     --bg-card: #FFFFFF;
     --bg-card-hover: #FFFFFF;
-    --bg-subtle: #F4F2EC;
+    --bg-subtle: #F5F3EC;
     --border: #E5E2DC;
-    --border-hover: #C2542D;
+    --border-hover: #B5654A;
     
     /* Typography Colors */
     --text-primary: #1A1A1A;
@@ -16,12 +16,15 @@
     --text-muted: #8A8A8A;
     --text-dim: #9E9E9E;
 
-    /* Primary Aesthetic Accent: Option A — Burnt Sienna (#C2542D) */
-    --accent: #C2542D;
-    --accent-hover: #A8421F;
-    --accent-dark: #8F3416;
-    --accent-dim: rgba(194, 84, 45, 0.08);
-    --accent-border: rgba(194, 84, 45, 0.25);
+    /* Option A Palette: Clay Terracotta (#B5654A) + Muted Olive (#7A8B5C) */
+    --accent: #B5654A;
+    --accent-hover: #9E523A;
+    --accent-dark: #823F2B;
+    --accent-dim: rgba(181, 101, 74, 0.08);
+    --accent-border: rgba(181, 101, 74, 0.25);
+
+    --accent-secondary: #7A8B5C;
+    --accent-secondary-dim: rgba(122, 139, 92, 0.1);
 
     /* Fonts */
     --font-heading: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -64,8 +67,8 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: rgba(194, 84, 45, 0.18);
-  color: #8F3416;
+  background-color: rgba(181, 101, 74, 0.18);
+  color: #823F2B;
 }
 
 /* Custom Minimal Scrollbar */
@@ -204,7 +207,7 @@ body {
 
 .scan-card:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 12px 35px -10px rgba(194, 84, 45, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 35px -10px rgba(181, 101, 74, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
 }
 
 /* Terminal Masked Wipe for Headings */

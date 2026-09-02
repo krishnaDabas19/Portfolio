@@ -14,11 +14,11 @@ export default function Skills() {
       >
         {/* Section Header with Monospace Numbered Index */}
         <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-[#C2542D] font-bold uppercase tracking-widest">
+          <span className="font-mono text-xs text-[#B5654A] font-bold uppercase tracking-widest">
             // 02. capabilities
           </span>
           <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
-          <span className="font-mono text-xs text-[#8A8A8A]">
+          <span className="font-mono text-xs text-[#7A8B5C] font-semibold">
             TECH ARSENAL
           </span>
         </div>
@@ -37,11 +37,11 @@ export default function Skills() {
           {toolboxCategories.map((group, groupIdx) => (
             <div
               key={groupIdx}
-              className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#C2542D] transition-all"
+              className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#B5654A] transition-all"
             >
               {/* Category Annotation Header */}
               <div className="pb-4 mb-6 border-b border-[#E5E2DC] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <span className="font-mono text-xs font-bold text-[#C2542D] uppercase tracking-wider">
+                <span className="font-mono text-xs font-bold text-[#B5654A] uppercase tracking-wider">
                   {group.label}
                 </span>
                 <span className="font-body text-xs text-[#8A8A8A]">
@@ -59,14 +59,14 @@ export default function Skills() {
                         className="group relative cursor-default transition-transform hover:-translate-y-0.5"
                       >
                         <div className="flex items-baseline gap-2">
-                          <span className="text-2xl sm:text-3xl font-heading font-black text-[#1A1A1A] group-hover:text-[#C2542D] transition-colors">
+                          <span className="text-2xl sm:text-3xl font-heading font-black text-[#1A1A1A] group-hover:text-[#B5654A] transition-colors">
                             {skill.name}
                           </span>
-                          <span className="text-[10px] font-mono text-[#C2542D] font-bold px-2 py-0.5 rounded-full bg-[#C2542D]/10">
+                          <span className="text-[10px] font-mono text-[#B5654A] font-bold px-2 py-0.5 rounded-full bg-[#B5654A]/10">
                             Core
                           </span>
                         </div>
-                        <span className="font-mono text-[11px] text-[#8A8A8A] block mt-0.5">
+                        <span className="font-mono text-[11px] text-[#7A8B5C] font-medium block mt-0.5">
                           {skill.note}
                         </span>
                       </div>
@@ -80,10 +80,10 @@ export default function Skills() {
                         className="group relative cursor-default transition-transform hover:-translate-y-0.5"
                       >
                         <div className="flex items-baseline gap-2">
-                          <span className="text-lg sm:text-xl font-heading font-bold text-[#1A1A1A] group-hover:text-[#C2542D] transition-colors">
+                          <span className="text-lg sm:text-xl font-heading font-bold text-[#1A1A1A] group-hover:text-[#B5654A] transition-colors">
                             {skill.name}
                           </span>
-                          <span className="text-[10px] font-mono text-[#8A8A8A]">
+                          <span className="text-[10px] font-mono text-[#7A8B5C]">
                             // {skill.experience}
                           </span>
                         </div>
@@ -101,7 +101,7 @@ export default function Skills() {
                       className="group relative cursor-default transition-transform hover:-translate-y-0.5 opacity-80 hover:opacity-100"
                     >
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-sm font-heading font-semibold text-[#3F3F3F] group-hover:text-[#C2542D] transition-colors">
+                        <span className="text-sm font-heading font-semibold text-[#3F3F3F] group-hover:text-[#B5654A] transition-colors">
                           {skill.name}
                         </span>
                       </div>

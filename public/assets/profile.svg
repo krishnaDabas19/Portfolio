@@ -1,23 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
     <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="50%" stop-color="#131d33"/>
-      <stop offset="100%" stop-color="#090d16"/>
-    </linearGradient>
-    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#14b8a6"/>
-      <stop offset="100%" stop-color="#0d9488"/>
+      <stop offset="0%" stop-color="#F5F3EC"/>
+      <stop offset="100%" stop-color="#EBE7DC"/>
     </linearGradient>
   </defs>
-  <rect width="400" height="400" fill="url(#avatarBg)"/>
-  <circle cx="200" cy="200" r="190" fill="none" stroke="#1e293b" stroke-width="4"/>
-  <circle cx="200" cy="200" r="180" fill="none" stroke="url(#accentGlow)" stroke-width="2" stroke-dasharray="8 6"/>
+  <rect width="400" height="400" fill="url(#avatarBg)" rx="48"/>
+  <rect x="16" y="16" width="368" height="368" fill="none" stroke="#B5654A" stroke-width="2.5" stroke-dasharray="8 6" rx="40" opacity="0.6"/>
   
-  <!-- Silhouette / Initials -->
-  <circle cx="200" cy="150" r="55" fill="#1e293b" stroke="#334155" stroke-width="2"/>
-  <path d="M110 320 C110 240, 290 240, 290 320 Z" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <!-- Silhouette Vector & Geometric Pattern -->
+  <circle cx="200" cy="145" r="54" fill="#FFFFFF" stroke="#E5E2DC" stroke-width="2"/>
+  <path d="M100 315 C100 235, 300 235, 300 315 Z" fill="#FFFFFF" stroke="#E5E2DC" stroke-width="2"/>
   
-  <text x="200" y="270" font-family="'JetBrains Mono', monospace" font-size="44" font-weight="700" fill="#14b8a6" text-anchor="middle">KD</text>
-  <text x="200" y="360" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="1.5">// KRISHNA DABAS</text>
+  <text x="200" y="260" font-family="'Space Grotesk', sans-serif" font-size="46" font-weight="800" fill="#B5654A" text-anchor="middle" letter-spacing="-1">KD</text>
+  <text x="200" y="350" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#7A8B5C" text-anchor="middle" letter-spacing="2">// KRISHNA DABAS</text>
 </svg>

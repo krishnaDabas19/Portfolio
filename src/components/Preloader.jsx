@@ -26,9 +26,9 @@ export default function Preloader() {
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.25 }}
-              className="w-14 h-14 rounded-full border border-[#E5E2DC] bg-[#FFFFFF] flex items-center justify-center shadow-md"
+              className="w-14 h-14 rounded-2xl border-2 border-[#B5654A] bg-[#FFFFFF] flex items-center justify-center shadow-md"
             >
-              <span className="font-heading text-lg font-bold tracking-tight text-[#C2542D]">
+              <span className="font-heading text-lg font-bold tracking-tight text-[#B5654A]">
                 KD
               </span>
             </motion.div>
@@ -43,12 +43,12 @@ export default function Preloader() {
                   duration: 0.8,
                   ease: 'easeInOut',
                 }}
-                className="w-full h-full bg-[#C2542D]"
+                className="w-full h-full bg-[#B5654A]"
               />
             </div>
 
-            <p className="font-mono text-xs text-[#8A8A8A] tracking-wider">
-              // initializing...
+            <p className="font-mono text-xs text-[#7A8B5C] tracking-wider font-semibold">
+              // initializing index...
             </p>
           </div>
         </motion.div>

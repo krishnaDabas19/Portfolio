@@ -8,11 +8,11 @@ export default function ExperienceEducation() {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'Trophy':
-        return <Trophy className="w-5 h-5 text-[#C2542D]" />;
+        return <Trophy className="w-5 h-5 text-[#B5654A]" />;
       case 'Code2':
-        return <Code2 className="w-5 h-5 text-[#C2542D]" />;
+        return <Code2 className="w-5 h-5 text-[#7A8B5C]" />;
       default:
-        return <Sparkles className="w-5 h-5 text-[#C2542D]" />;
+        return <Sparkles className="w-5 h-5 text-[#B5654A]" />;
     }
   };
 
@@ -27,11 +27,11 @@ export default function ExperienceEducation() {
       >
         {/* Section Header with Monospace Numbered Index */}
         <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-[#C2542D] font-bold uppercase tracking-widest">
+          <span className="font-mono text-xs text-[#B5654A] font-bold uppercase tracking-widest">
             // 04. records
           </span>
           <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
-          <span className="font-mono text-xs text-[#8A8A8A]">
+          <span className="font-mono text-xs text-[#7A8B5C] font-semibold">
             TRACK RECORD
           </span>
         </div>
@@ -42,21 +42,21 @@ export default function ExperienceEducation() {
 
         {/* 1. Measurable Milestones Cards */}
         <div className="space-y-4">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#8A8A8A] block">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A8B5C] font-semibold block">
             // Technical Accomplishments
           </span>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {achievementsData.map((item, idx) => (
               <div
                 key={item.id}
-                className="p-5 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#C2542D] transition-all flex flex-col justify-between"
+                className="p-5 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#B5654A] transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-9 h-9 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] flex items-center justify-center">
                       {getIcon(item.icon)}
                     </div>
-                    <span className="font-mono text-[10px] text-[#C2542D] font-bold">
+                    <span className="font-mono text-[10px] text-[#B5654A] font-bold">
                       0{idx + 1}
                     </span>
                   </div>
@@ -74,7 +74,7 @@ export default function ExperienceEducation() {
                   <span className="font-mono text-[11px] text-[#8A8A8A]">
                     {item.metricLabel}
                   </span>
-                  <div className="text-lg font-bold font-mono text-[#C2542D]">
+                  <div className="text-lg font-bold font-mono text-[#B5654A]">
                     {item.metric === '50+' ? (
                       <AnimatedCounter target="50" suffix="+" />
                     ) : item.metric === '100%' ? (
@@ -91,7 +91,7 @@ export default function ExperienceEducation() {
 
         {/* 2. Academic Timeline */}
         <div className="space-y-4 pt-4">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#8A8A8A] block">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A8B5C] font-semibold block">
             // Academic Progression
           </span>
 
@@ -99,17 +99,17 @@ export default function ExperienceEducation() {
             {educationData.map((edu) => (
               <div key={edu.id} className="relative group">
                 {/* Timeline node */}
-                <div className="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#FFFFFF] bg-[#C2542D] shadow-xs" />
+                <div className="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#FFFFFF] bg-[#B5654A] shadow-xs" />
 
-                <div className="p-5 sm:p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#C2542D] transition-all">
+                <div className="p-5 sm:p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#B5654A] transition-all">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2 text-xs font-mono text-[#C2542D] font-semibold">
-                      <GraduationCap className="w-4 h-4 text-[#C2542D]" />
+                    <div className="flex items-center gap-2 text-xs font-mono text-[#B5654A] font-semibold">
+                      <GraduationCap className="w-4 h-4 text-[#B5654A]" />
                       <span>{edu.institution}</span>
                     </div>
 
                     <span className="flex items-center gap-1.5 text-xs font-mono text-[#8A8A8A]">
-                      <Calendar className="w-3.5 h-3.5 text-[#C2542D]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#7A8B5C]" />
                       {edu.period}
                     </span>
                   </div>
@@ -120,11 +120,11 @@ export default function ExperienceEducation() {
 
                   <div className="flex flex-wrap items-center gap-3 mb-3">
                     <span className="inline-flex items-center gap-1 text-xs font-mono text-[#8A8A8A]">
-                      <MapPin className="w-3.5 h-3.5 text-[#C2542D]" />
+                      <MapPin className="w-3.5 h-3.5 text-[#7A8B5C]" />
                       {edu.location}
                     </span>
 
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-mono font-semibold bg-[#C2542D]/10 text-[#C2542D] border border-[#C2542D]/30">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-mono font-semibold bg-[#B5654A]/10 text-[#B5654A] border border-[#B5654A]/30">
                       <Award className="w-3.5 h-3.5" />
                       {edu.grade}
                     </span>
