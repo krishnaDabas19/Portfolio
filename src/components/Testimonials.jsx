@@ -25,10 +25,10 @@ export default function Testimonials() {
             {testimonialsData.map((item) => (
               <div
                 key={item.id}
-                className="p-7 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] hover:border-blue-600 transition-all flex flex-col justify-between shadow-xs hover:shadow-md"
+                className="p-7 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#C2542D] transition-all flex flex-col justify-between shadow-xs hover:shadow-md"
               >
                 <div>
-                  <Quote className="w-7 h-7 text-blue-600/40 mb-4" />
+                  <Quote className="w-7 h-7 text-[#C2542D]/40 mb-4" />
                   <p className="text-sm font-body text-[#3F3F3F] leading-relaxed italic mb-6">
                     "{item.quote}"
                   </p>
@@ -39,11 +39,11 @@ export default function Testimonials() {
                     <h4 className="text-sm font-heading font-semibold text-[#1A1A1A]">
                       {item.name}
                     </h4>
-                    <p className="text-xs font-mono text-blue-600">
+                    <p className="text-xs font-mono text-[#C2542D]">
                       {item.role}
                     </p>
                   </div>
-                  <MessageSquare className="w-4 h-4 text-blue-600/60" />
+                  <MessageSquare className="w-4 h-4 text-[#C2542D]/60" />
                 </div>
               </div>
             ))}

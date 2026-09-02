@@ -32,13 +32,13 @@ export default function Hero() {
           >
             {/* Monospace Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E5E2DC] bg-[#FFFFFF] mb-6 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-[#C2542D] animate-ping" />
               <span className="font-mono text-xs text-[#8A8A8A]">
                 <strong className="text-[#1A1A1A] font-medium">B.Tech CSE (AI & ML)</strong> @ LPU
               </span>
               <span className="text-[#8A8A8A]/40">•</span>
-              <span className="font-mono text-xs text-blue-600 font-medium flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-blue-600" />
+              <span className="font-mono text-xs text-[#C2542D] font-medium flex items-center gap-1">
+                <Sparkles className="w-3 h-3 text-[#C2542D]" />
                 Available for opportunities
               </span>
             </div>
@@ -48,7 +48,7 @@ export default function Hero() {
               <HeroSvgBrackets />
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold tracking-tight text-[#1A1A1A] leading-[1.08] pl-2">
                 Hi, I'm <br className="hidden sm:inline" />
-                <span className="text-blue-600">
+                <span className="text-[#C2542D]">
                   {personalInfo.name}
                 </span>
               </h1>
@@ -68,7 +68,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <button
                 onClick={() => scrollTo('projects')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs uppercase tracking-wider font-semibold cursor-pointer shadow-md shadow-blue-600/20 active:scale-95 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#C2542D] hover:bg-[#A8421F] text-white font-mono text-xs uppercase tracking-wider font-semibold cursor-pointer shadow-md shadow-[#C2542D]/20 active:scale-95 transition-all"
               >
                 <span>View Work</span>
                 <ArrowDown className="w-4 h-4" />
@@ -76,10 +76,10 @@ export default function Hero() {
 
               <button
                 onClick={() => scrollTo('contact')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-blue-600 text-[#1A1A1A] font-mono text-xs uppercase tracking-wider font-medium transition-all cursor-pointer active:scale-95 shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#C2542D] text-[#1A1A1A] font-mono text-xs uppercase tracking-wider font-medium transition-all cursor-pointer active:scale-95 shadow-xs"
               >
                 <span>Get in Touch</span>
-                <ArrowUpRight className="w-4 h-4 text-blue-600" />
+                <ArrowUpRight className="w-4 h-4 text-[#C2542D]" />
               </button>
             </div>
 
@@ -89,9 +89,9 @@ export default function Hero() {
                 href={personalInfo.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 transition-colors group"
+                className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors group"
               >
-                <GithubIcon className="w-4 h-4 text-[#8A8A8A] group-hover:text-blue-600 group-hover:scale-110 transition-transform" />
+                <GithubIcon className="w-4 h-4 text-[#8A8A8A] group-hover:text-[#C2542D] group-hover:scale-110 transition-transform" />
                 <span>GitHub</span>
               </a>
 
@@ -101,9 +101,9 @@ export default function Hero() {
                 href={personalInfo.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 transition-colors group"
+                className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors group"
               >
-                <LinkedinIcon className="w-4 h-4 text-[#8A8A8A] group-hover:text-blue-600 group-hover:scale-110 transition-transform" />
+                <LinkedinIcon className="w-4 h-4 text-[#8A8A8A] group-hover:text-[#C2542D] group-hover:scale-110 transition-transform" />
                 <span>LinkedIn</span>
               </a>
 
@@ -111,9 +111,9 @@ export default function Hero() {
 
               <a
                 href={personalInfo.socials.email}
-                className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-blue-600 transition-colors group"
+                className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors group"
               >
-                <Mail className="w-4 h-4 text-[#8A8A8A] group-hover:text-blue-600 group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 text-[#8A8A8A] group-hover:text-[#C2542D] group-hover:scale-110 transition-transform" />
                 <span>Email</span>
               </a>
             </div>
@@ -130,8 +130,8 @@ export default function Hero() {
               {/* Top Terminal Status Header */}
               <div className="flex items-center justify-between pb-3 mb-5 border-b border-[#E5E2DC] text-xs font-mono text-[#8A8A8A]">
                 <div className="flex items-center gap-2">
-                  <Terminal className="w-3.5 h-3.5 text-blue-600" />
-                  <span className="text-blue-600 font-semibold">dev_profile.sys</span>
+                  <Terminal className="w-3.5 h-3.5 text-[#C2542D]" />
+                  <span className="text-[#C2542D] font-semibold">dev_profile.sys</span>
                 </div>
                 <span className="text-[10px] text-[#8A8A8A] font-mono">ID: KD_2026</span>
               </div>
@@ -139,7 +139,7 @@ export default function Hero() {
               {/* Center Profile Avatar Frame */}
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4 group">
-                  <div className="relative p-[2px] rounded-full border-2 border-blue-600/30">
+                  <div className="relative p-[2px] rounded-full border-2 border-[#C2542D]/30">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-[#FAFAF8]">
                       <img
                         src={imgSrc}
@@ -149,13 +149,13 @@ export default function Hero() {
                       />
                     </div>
                   </div>
-                  <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-[#FFFFFF] bg-blue-600 shadow-xs" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-[#FFFFFF] bg-[#C2542D] shadow-xs" />
                 </div>
 
                 <h3 className="font-heading font-bold text-lg text-[#1A1A1A] mb-0.5">
                   {personalInfo.name}
                 </h3>
-                <p className="font-mono text-xs text-blue-600 mb-4">
+                <p className="font-mono text-xs text-[#C2542D] mb-4 font-medium">
                   B.Tech CSE (AI & ML)
                 </p>
 
@@ -167,7 +167,7 @@ export default function Hero() {
                   </div>
                   <div className="p-2 rounded-lg bg-[#FAFAF8] border border-[#E5E2DC]">
                     <span className="text-[#8A8A8A] block text-[10px]">FOCUS</span>
-                    <span className="text-blue-600 font-medium">Full-Stack & AI</span>
+                    <span className="text-[#C2542D] font-medium">Full-Stack & AI</span>
                   </div>
                 </div>
               </div>

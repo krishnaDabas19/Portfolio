@@ -10,13 +10,13 @@ export default function Skills() {
   const getCategoryIcon = (category) => {
     switch (category) {
       case 'Languages':
-        return <Code className="w-4 h-4 text-blue-600" />;
+        return <Code className="w-4 h-4 text-[#C2542D]" />;
       case 'Web Technologies':
-        return <Globe className="w-4 h-4 text-blue-600" />;
+        return <Globe className="w-4 h-4 text-[#C2542D]" />;
       case 'Databases & Tools':
-        return <Database className="w-4 h-4 text-blue-600" />;
+        return <Database className="w-4 h-4 text-[#C2542D]" />;
       default:
-        return <Users className="w-4 h-4 text-blue-600" />;
+        return <Users className="w-4 h-4 text-[#C2542D]" />;
     }
   };
 
@@ -41,7 +41,7 @@ export default function Skills() {
             {skillsData.map((categoryGroup, groupIdx) => (
               <div
                 key={groupIdx}
-                className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] hover:border-blue-600 transition-colors shadow-xs hover:shadow-md"
+                className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#C2542D] transition-colors shadow-xs hover:shadow-md"
               >
                 {/* Category Header */}
                 <div className="flex items-center justify-between pb-3 mb-5 border-b border-[#E5E2DC]">
@@ -51,7 +51,7 @@ export default function Skills() {
                       {categoryGroup.category}
                     </h3>
                   </div>
-                  <span className="font-mono text-[11px] text-blue-600 font-medium">
+                  <span className="font-mono text-[11px] text-[#C2542D] font-medium">
                     {categoryGroup.tag}
                   </span>
                 </div>
@@ -73,16 +73,16 @@ export default function Skills() {
                       >
                         <button
                           type="button"
-                          className="px-3.5 py-1.5 rounded-full font-mono text-xs border border-[#E5E2DC] bg-[#FAFAF8] text-[#1A1A1A] hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 focus:border-blue-600 focus:outline-none transition-all flex items-center gap-2 cursor-pointer shadow-xs"
+                          className="px-3.5 py-1.5 rounded-full font-mono text-xs border border-[#E5E2DC] bg-[#FAFAF8] text-[#1A1A1A] hover:border-[#C2542D] hover:text-[#C2542D] hover:bg-[#C2542D]/5 focus:border-[#C2542D] focus:outline-none transition-all flex items-center gap-2 cursor-pointer shadow-xs"
                         >
                           <span>{skill.name}</span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-600/60" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C2542D]/60" />
                         </button>
 
                         {/* Subtle Hover Tooltip */}
                         {isTooltipOpen && (
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-30 w-52 p-2.5 rounded-lg bg-[#FFFFFF] border border-blue-600/40 text-[#1A1A1A] shadow-lg pointer-events-none animate-in fade-in-0 zoom-in-95 duration-150">
-                            <div className="font-mono text-[11px] text-blue-600 font-bold mb-0.5">
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-30 w-52 p-2.5 rounded-lg bg-[#FFFFFF] border border-[#C2542D]/40 text-[#1A1A1A] shadow-lg pointer-events-none animate-in fade-in-0 zoom-in-95 duration-150">
+                            <div className="font-mono text-[11px] text-[#C2542D] font-bold mb-0.5">
                               {skill.level}
                             </div>
                             <div className="text-[11px] font-body text-[#3F3F3F] leading-tight">

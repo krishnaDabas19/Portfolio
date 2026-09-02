@@ -16,8 +16,8 @@ export function SchematicDivider({ className = '' }) {
           strokeWidth="1.2"
           className="animate-draw-line"
         />
-        <circle cx="230" cy="2" r="2" fill="#2563EB" />
-        <circle cx="370" cy="2" r="2" fill="#2563EB" />
+        <circle cx="230" cy="2" r="2" fill="#C2542D" />
+        <circle cx="370" cy="2" r="2" fill="#C2542D" />
         <text
           x="300"
           y="6"
@@ -32,9 +32,9 @@ export function SchematicDivider({ className = '' }) {
 
         <defs>
           <linearGradient id="schematicGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.1" />
-            <stop offset="50%" stopColor="#2563EB" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#2563EB" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#C2542D" stopOpacity="0.1" />
+            <stop offset="50%" stopColor="#C2542D" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#C2542D" stopOpacity="0.1" />
           </linearGradient>
         </defs>
       </svg>
@@ -52,11 +52,11 @@ export function HeroSvgBrackets() {
     >
       <path
         d="M 2 25 L 2 2 L 25 2"
-        stroke="#2563EB"
+        stroke="#C2542D"
         strokeWidth="1.5"
         className="animate-draw-line"
       />
-      <circle cx="2" cy="2" r="2" fill="#2563EB" />
+      <circle cx="2" cy="2" r="2" fill="#C2542D" />
     </svg>
   );
 }

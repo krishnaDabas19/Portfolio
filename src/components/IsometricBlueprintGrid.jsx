@@ -21,7 +21,7 @@ export default function IsometricBlueprintGrid() {
 
   return (
     <div
-      className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none opacity-60 dark:opacity-40"
+      className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none opacity-50"
       aria-hidden="true"
     >
       {/* 3D Isometric Perspective Blueprint Container */}
@@ -48,15 +48,14 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 50 0 L 0 0 0 50"
                 fill="none"
-                stroke="currentColor"
+                stroke="#E5E2DC"
                 strokeWidth="1"
-                className="text-[#E5E2DC] dark:text-[#2A2A2A]"
               />
               <circle
                 cx="0"
                 cy="0"
                 r="1"
-                fill="#2563EB"
+                fill="#C2542D"
                 fillOpacity="0.3"
               />
             </pattern>
@@ -75,7 +74,7 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 150 0 L 0 0 0 150"
                 fill="none"
-                stroke="#2563EB"
+                stroke="#C2542D"
                 strokeOpacity="0.2"
                 strokeWidth="1.2"
               />
@@ -107,7 +106,7 @@ export default function IsometricBlueprintGrid() {
               y1="400"
               x2="750"
               y2="400"
-              stroke="#2563EB"
+              stroke="#C2542D"
               strokeOpacity="0.3"
               strokeWidth="1.2"
               strokeDasharray="6 4"
@@ -117,7 +116,7 @@ export default function IsometricBlueprintGrid() {
               y1="50"
               x2="400"
               y2="750"
-              stroke="#2563EB"
+              stroke="#C2542D"
               strokeOpacity="0.3"
               strokeWidth="1.2"
               strokeDasharray="6 4"
@@ -128,7 +127,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="410"
             y="70"
-            fill="#2563EB"
+            fill="#C2542D"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -140,7 +139,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="600"
             y="390"
-            fill="#2563EB"
+            fill="#C2542D"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -163,15 +162,15 @@ export default function IsometricBlueprintGrid() {
         </svg>
 
         {/* Pulsing Connection Nodes */}
-        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400" />
-        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-blue-500" />
-        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-blue-600" />
-        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-blue-500" />
-        <div className="absolute top-[450px] left-[450px] pulse-node-5 w-2 h-2 rounded-full bg-blue-600" />
+        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-[#C2542D]" />
+        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-[#A8421F]" />
+        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-[#C2542D]" />
+        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-[#A8421F]" />
+        <div className="absolute top-[450px] left-[450px] pulse-node-5 w-2 h-2 rounded-full bg-[#C2542D]" />
 
         {/* Connecting node lines */}
-        <div className="absolute top-[204px] left-[354px] w-[150px] h-[150px] border-t border-l border-blue-600/20 pointer-events-none" />
-        <div className="absolute top-[354px] left-[304px] w-[200px] h-[150px] border-b border-r border-blue-600/20 pointer-events-none" />
+        <div className="absolute top-[204px] left-[354px] w-[150px] h-[150px] border-t border-l border-[#C2542D]/20 pointer-events-none" />
+        <div className="absolute top-[354px] left-[304px] w-[200px] h-[150px] border-b border-r border-[#C2542D]/20 pointer-events-none" />
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ export default function Projects() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-3.5 py-1.5 rounded-md text-xs font-mono transition-all cursor-pointer ${
                   activeCategory === category
-                    ? 'bg-blue-600 text-white font-semibold shadow-xs'
+                    ? 'bg-[#C2542D] text-white font-semibold shadow-xs'
                     : 'text-[#8A8A8A] hover:text-[#1A1A1A]'
                 }`}
               >
@@ -57,24 +57,24 @@ export default function Projects() {
                 {/* Card Header: Category Badge + Duration */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3 relative z-10">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-blue-600/10 text-blue-700 border border-blue-600/20 font-medium">
-                      <FolderGit2 className="w-3.5 h-3.5 text-blue-600" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-[#C2542D]/10 text-[#C2542D] border border-[#C2542D]/20 font-medium">
+                      <FolderGit2 className="w-3.5 h-3.5 text-[#C2542D]" />
                       {project.categoryBadge}
                     </span>
                   </div>
 
                   <span className="flex items-center gap-1.5 text-xs font-mono text-[#8A8A8A]">
-                    <Calendar className="w-3.5 h-3.5 text-blue-600" />
+                    <Calendar className="w-3.5 h-3.5 text-[#C2542D]" />
                     {project.period}
                   </span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="mb-3 relative z-10">
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#1A1A1A] group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#1A1A1A] group-hover:text-[#C2542D] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono text-blue-600 mt-0.5 font-medium">
+                  <p className="text-xs font-mono text-[#C2542D] mt-0.5 font-medium">
                     {project.subtitle}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export default function Projects() {
                       key={fIdx}
                       className="flex items-start gap-2.5 text-xs sm:text-sm font-body text-[#3F3F3F]"
                     >
-                      <span className="text-blue-600 font-mono mt-0.5 font-bold">❯</span>
+                      <span className="text-[#C2542D] font-mono mt-0.5 font-bold">❯</span>
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -104,7 +104,7 @@ export default function Projects() {
                     {project.tech.map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#FAFAF8] border border-[#E5E2DC] text-[#1A1A1A] hover:border-blue-600 hover:text-blue-600 transition-colors"
+                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#FAFAF8] border border-[#E5E2DC] text-[#1A1A1A] hover:border-[#C2542D] hover:text-[#C2542D] transition-colors"
                       >
                         {t}
                       </span>
@@ -117,7 +117,7 @@ export default function Projects() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-blue-600 hover:text-blue-600 text-xs font-mono text-[#1A1A1A] transition-all shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#C2542D] hover:text-[#C2542D] text-xs font-mono text-[#1A1A1A] transition-all shadow-xs"
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
                       <span>View Code</span>
@@ -127,7 +127,7 @@ export default function Projects() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-mono transition-all font-semibold shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#C2542D] hover:bg-[#A8421F] text-white text-xs font-mono transition-all font-semibold shadow-xs"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Live Demo</span>

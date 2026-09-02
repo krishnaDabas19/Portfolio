@@ -29,7 +29,7 @@ export default function Footer() {
               href={personalInfo.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-[#8A8A8A] hover:text-blue-600 hover:bg-[#FFFFFF] transition-colors"
+              className="p-2 rounded-lg text-[#8A8A8A] hover:text-[#C2542D] hover:bg-[#FFFFFF] transition-colors"
               title="GitHub Profile"
               aria-label="GitHub Profile"
             >
@@ -40,7 +40,7 @@ export default function Footer() {
               href={personalInfo.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-[#8A8A8A] hover:text-blue-600 hover:bg-[#FFFFFF] transition-colors"
+              className="p-2 rounded-lg text-[#8A8A8A] hover:text-[#C2542D] hover:bg-[#FFFFFF] transition-colors"
               title="LinkedIn Profile"
               aria-label="LinkedIn Profile"
             >
@@ -49,7 +49,7 @@ export default function Footer() {
 
             <a
               href={personalInfo.socials.email}
-              className="p-2 rounded-lg text-[#8A8A8A] hover:text-blue-600 hover:bg-[#FFFFFF] transition-colors"
+              className="p-2 rounded-lg text-[#8A8A8A] hover:text-[#C2542D] hover:bg-[#FFFFFF] transition-colors"
               title="Send Email"
               aria-label="Send Email"
             >
@@ -59,12 +59,12 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] text-xs font-mono text-[#8A8A8A] hover:text-blue-600 hover:border-blue-600/40 transition-colors cursor-pointer shadow-xs"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] hover:border-[#C2542D]/40 transition-colors cursor-pointer shadow-xs"
             title="Scroll to top"
             aria-label="Scroll back to top"
           >
             <span>Top</span>
-            <ArrowUp className="w-3.5 h-3.5 text-blue-600" />
+            <ArrowUp className="w-3.5 h-3.5 text-[#C2542D]" />
           </button>
         </div>
       </div>
