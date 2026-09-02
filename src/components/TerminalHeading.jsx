@@ -7,7 +7,7 @@ export default function TerminalHeading({ title, subtitle, tag, className = '' }
       {tag && (
         <div className="flex items-center gap-2 mb-1.5">
           <span className="section-tag">{tag}</span>
-          <span className="h-[1px] w-8 bg-gradient-to-r from-cyan-500/50 to-transparent" />
+          <span className="h-[1px] w-8 bg-gradient-to-r from-teal-500/50 to-transparent" />
         </div>
       )}
 

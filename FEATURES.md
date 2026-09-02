@@ -1,408 +1,111 @@
-# Portfolio Features & Components Documentation
+# Krishna Dabas Portfolio — Complete Feature Breakdown
 
-## 🎯 Overview
-
-This portfolio website is a comprehensive showcase of Krishna Dabas's skills, projects, and achievements. It features a modern dark-themed design with electric blue accents and smooth, interactive animations throughout.
+This document provides a comprehensive technical breakdown of all features, architecture patterns, and design decisions implemented in the **Krishna Dabas Editorial Developer Portfolio**.
 
 ---
 
-## 📦 Component Breakdown
+## 🎨 1. Design Identity & Theme System
 
-### 1. **Navbar** (`Navbar.jsx`)
-**Features:**
-- Fixed positioning with smooth scroll-lock enhancement
-- Active section highlighting based on scroll position
-- Smooth navigation with scroll-to-section functionality
-- Glass-morphism effect that enhances on scroll
-- Animated pulsing dot in logo
-- Fully responsive dropdown-ready structure
-
-**Key Elements:**
-- Logo with animated accent dot
-- Navigation menu with 7 main sections
-- Active state underline animation
-- Transforms on scroll (backdrop blur, border color)
-
-**Responsive:**
-- Desktop: Full horizontal menu
-- Mobile: Menu items stack responsively
+- **Clean Editorial Dev-Aesthetic**: Single-column layout with generous whitespace, confident typography hierarchy, and zero distracting gimmicks.
+- **Dark Palette**: Deep charcoal / near-black background (`#0A0A0F`), dark card surfaces (`#12121A` / `#161B22`), and subtle borders (`rgba(255, 255, 255, 0.08)`).
+- **ONE Restrained Accent Color**: Electric Teal / Emerald (`#14B8A6` / `#2DD4BF`), used sparingly for monospace tags (`// skills`, `// projects`), active links, indicators, and button highlights.
+- **Typography Hierarchy**:
+  - **Headings**: `Space Grotesk` (modern geometric sans-serif for H1/H2/H3).
+  - **Body Text**: `Inter` (high-legibility neutral sans-serif).
+  - **Monospace Elements**: `JetBrains Mono` for `// tags`, code labels, and coordinate metrics.
+- **Signature Hero Visual**: Isometric blueprint schematic grid in pure CSS/SVG with dynamic mouse perspective tilt and pulsing connection nodes.
 
 ---
 
-### 2. **Hero Section** (`Hero.jsx`)
-**Features:**
-- Full viewport height landing section
-- Animated typing effect for dynamic role text
-- Gradient blob background animations
-- Grid pattern overlay
-- Smooth scroll reveal animation
-- Multiple CTA buttons with different styles
-- Direct contact links
-- Scroll indicator animation
+## 🧭 2. Navigation & Global Controls
 
-**Key Animations:**
-- Blob float animation (perpetual movement)
-- Text typing/deleting effect with automatic rotation
-- Cursor blinking animation
-- Scroll wheel animation
-- Staggered element animations (slide-down)
-
-**Interactive Elements:**
-- "View Projects" button (gradient, shadow effects)
-- "Contact Me" button (transparent with border)
-- Email and phone quick links
-- Scroll indicator with wheel animation
+- **Shrinking Glass Navbar**: Automatically shrinks padding and introduces a subtle backdrop blur on scroll (`scrollY > 40`).
+- **Monogram Logo ("KD")**: Minimal circular initials badge in the navbar that smoothly navigates to the top.
+- **Active Section Highlighting**: Real-time scroll spy that underlines the active nav link with a crisp electric teal indicator.
+- **Mobile Navigation Drawer**: Smooth slide-in menu for small screens with monospace formatted section links.
+- **Scroll Progress Bar**: A 2px electric teal line fixed at the top of the viewport tracking reading progress in real time.
+- **Precision Custom Cursor**: Interactive dot and trailing ring that snaps and scales over clickable targets (automatically disabled on touch devices).
 
 ---
 
-### 3. **About Section** (`About.jsx`)
-**Features:**
-- Scroll-reveal animation using custom hook
-- Professional bio with highlighted keywords
-- Soft skills badges with hover effects
-- Organized layout with semantic structure
-- Decorative background elements
+## 🌟 3. Section Breakdown
 
-**Key Elements:**
-- Section title with animated underline
-- Multiline bio with text emphasis
-- 5 soft skills (Problem Solving, Team Collaboration, Communication, Time Management, Adaptability)
-- Checkmark icons on skill badges
+### 1. Hero Section (`#hero`)
+- Monospace status pill: `// Available for opportunities` with animated ping indicator.
+- Bold Space Grotesk headline: `Hi, I'm Krishna Dabas` with electric teal accent.
+- Tagline and code-style descriptor explaining full-stack web and AI/ML focus.
+- Dual CTAs: Primary "View Work" and secondary "Get in Touch".
+- Interactive profile card with terminal status bar, profile avatar, and fallback SVG.
+- Quick social icons row: GitHub, LinkedIn, and Email.
 
-**Animations:**
-- Fade-in and slide-up on scroll
-- Hover scale and glow effects on skill badges
-- Color transitions on hover
+### 2. About Section (`#about`)
+- Section header: `// about` — "Background & Mindset".
+- Academic and engineering narrative focusing on AI/ML at Lovely Professional University.
+- **"Now Building & Exploring" Ticker Card**: Displays active focus areas in terminal format with `❯` markers.
+- **Soft Skills Badges**: Rounded pills with checkmarks for Problem Solving, Team Collaboration, Communication, Time Management, and Adaptability.
+- **Download Resume Action**: Direct PDF download button with hover elevation.
+- **Schematic SVG Divider**: Animated architectural divider line.
 
----
+### 3. Technical Arsenal (`#skills`)
+- Section header: `// skills` — "Technical Arsenal".
+- **Categorized Pill Tags (Exactly 4 Categories)**:
+  1. `Languages`: C, C++, Python, JavaScript
+  2. `Web Technologies`: HTML, CSS, JavaScript, React.js, Node.js
+  3. `Databases & Tools`: MySQL, MongoDB, Git, GitHub *(Figma and VS Code excluded)*
+  4. `Soft Skills`: Problem Solving, Team Collaboration, Communication, Time Management, Adaptability
+- **Interactive Tooltips**: Hovering or focusing any skill pill reveals proficiency level and focus concepts.
 
-### 4. **Skills Section** (`Skills.jsx`)
-**Features:**
-- Category-based skill organization (3 categories)
-- Animated skill progress bars
-- Icon representation for each category
-- Hover effects on skill cards
-- Smooth bar fill animation
+### 4. Things I've Built (`#projects`)
+- Section header: `// projects` — "Things I've Built".
+- **Category Filter Tabs**: `All`, `Web Dev`, `C++/DSA`.
+- **Scan-Line Reveal Effect**: Hovering a project card triggers a sweeping gradient scan-line and transitions the border to an electric teal glow.
+- **Card Contents**:
+  - Category badge + Project duration (e.g., `Jan 2026 – Feb 2026`).
+  - Space Grotesk project title with teal hover transition.
+  - Problem & solution summary paragraph.
+  - Key technical feature bullet points with `❯` bullet markers.
+  - Tech stack pill tags.
+  - Action links: "View Code" (GitHub) and "Live Demo".
 
-**Skills Organized By:**
-1. **Languages**: C, C++, Python, JavaScript
-2. **Web Technologies**: HTML, CSS, JavaScript, React.js, Node.js
-3. **Databases & Tools**: MySQL, MongoDB, Git, GitHub, Figma, VS Code
+### 5. Milestones & Activities (`#achievements`)
+- Section header: `// achievements` — "Milestones & Activities".
+- 3-card responsive grid:
+  1. Technical Events & Hackathons
+  2. 50+ Coding Problems Solved (DSA in C++)
+  3. AI & Web Exploration
+- **Animated Counter**: Count-up animation triggering when numbers enter the viewport.
 
-**Animations:**
-- Progress bar fill animation (staggered)
-- Card lift on hover
-- Border and background color transitions
-- Icon emoji display
+### 6. Academic Background (`#education`)
+- Section header: `// education` — "Academic Background".
+- **Vertical Timeline**:
+  - Glowing teal timeline nodes.
+  - Lovely Professional University (B.Tech CSE AI & ML, CGPA: 6.23, Aug 2025 – Present).
+  - DAV Public School (12th Grade: 86%, 10th Grade: 89%).
+  - Detailed coursework and academic records.
 
----
+### 7. Collaborations & Notes (`#testimonials`)
+- Section header: `// testimonials` — "Collaborations & Notes".
+- Clean peer notes and mentorship feedback cards.
 
-### 5. **Projects Section** (`Projects.jsx`)
-**Features:**
-- Card-based grid layout with 2 featured projects
-- Hover effects with gradient shimmer
-- Tech stack tags for each project
-- Project period badges
-- Dual color schemes (blue and purple accents)
-- Direct GitHub and Demo links
-- Project metadata display
+### 8. Get in Touch (`#contact`)
+- Section header: `// contact` — "Get in Touch".
+- Direct details: Email, Phone, Location.
+- **Copy Email with Toast**: Copies `krishnadabas19@gmail.com` to clipboard and triggers an animated confirmation popup.
+- **Validated Contact Form**: Full-width form with client-side validation and backend submission hooks.
 
-**Projects Showcase:**
-1. **Orvexon Studio** - Creative Portfolio Platform
-   - Tech: React.js, HTML, CSS, JavaScript, Figma
-   - Period: Jan–Feb 2026
-
-2. **Student Record Management System** - CRUD Application
-   - Tech: C++, Data Structures, File Handling, OOP
-   - Period: Mar–Apr 2026
-
-**Animations:**
-- Hover lift with enhanced shadow
-- Shimmer effect on hover
-- Tech badge hover effects
-- Link hover states with icon movement
-
----
-
-### 6. **Achievements Section** (`Achievements.jsx`)
-**Features:**
-- Achievement cards with icon display
-- Milestone statistics grid
-- Staggered animation on scroll
-- Hover bounce animation
-- Achievement line animation
-
-**Achievements Listed:**
-1. Technical Events participation
-2. 50+ programming problems solved
-3. AI/ML & Web Development exploration
-
-**Statistics:**
-- 2 Projects Completed
-- 50+ DSA Problems
-- 3 Tech Categories
-
-**Animations:**
-- Slide-in-up on scroll (staggered)
-- Icon bounce animation
-- Hover lift and glow
-- Animated line reveal on hover
+### 9. Footer
+- Copyright notice with dynamic current year.
+- Space Grotesk and JetBrains Mono branding.
+- Quick social icons and "Back to Top" smooth scrolling button.
 
 ---
 
-### 7. **Education Section** (`Education.jsx`)
-**Features:**
-- Timeline vertical layout
-- Timeline marker icons with gradient
-- Animated connector line
-- Education cards with details
-- Score/CGPA display
+## 📦 4. Centralized Data Architecture
 
-**Education Entries:**
-1. **B.Tech CSE (AI & ML)** - Lovely Professional University
-   - CGPA: 6.23/10
-   - Period: Aug 2025 – Present
-
-2. **Higher Secondary (12th)** - DAV Public School, Delhi
-   - Score: 86%
-   - Period: 2024–2025
-
-3. **Secondary (10th)** - DAV Public School, Delhi
-   - Score: 89%
-   - Period: 2022–2023
-
-**Animations:**
-- Slide-in-left on scroll
-- Timeline marker icons with gradient backgrounds
-- Card hover lift effects
-
----
-
-### 8. **Contact Section** (`Contact.jsx`)
-**Features:**
-- Contact information quick links (4 channels)
-- Functional contact form
-- Form submission feedback
-- Icon-based social links
-- Responsive form layout
-
-**Contact Methods:**
-- 📧 Email: krishnadabas19@gmail.com
-- 📱 Phone: +91-8512004546
-- 💼 LinkedIn: krishna-dabas
-- 🐙 GitHub: @dabaskrishna
-
-**Form Features:**
-- Name, Email, Message fields
-- Form validation
-- Submission success feedback
-- Input focus effects
-
-**Animations:**
-- Hover effects on contact links
-- Form input focus glow
-- Submit button hover effects
-- Success message animation
-
----
-
-### 9. **Footer** (`Footer.jsx`)
-**Features:**
-- Organized footer sections
-- Social media links with hover effects
-- Quick navigation links
-- Copyright information
-- Scroll-to-top functionality
-- Decorative top border
-
-**Footer Content:**
-- Personal branding section
-- Quick navigation to main sections
-- Social links (GitHub, LinkedIn, Email)
-- Copyright year auto-update
-
-**Animations:**
-- Social link hover effects
-- Scroll-to-top button animation
-- Link underline animation on hover
-
----
-
-## 🎨 Design System
-
-### Colors
-```css
-Primary: #0096ff (Electric Blue)
-Secondary: #7c3aed (Purple)
-Background: #0a0f23 - #1a1f3a (Dark Navy)
-Text: #ffffff, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)
-```
-
-### Typography
-- **Headings**: Bold system fonts (1.5rem - 3.5rem)
-- **Body**: Regular sans-serif (1rem - 1.1rem)
-- **Line Height**: 1.6 for readability
-
-### Spacing
-- **Section Padding**: 6rem vertical, 2rem horizontal
-- **Component Gaps**: 1rem - 3rem
-- **Responsive**: Scales down on smaller screens
-
-### Border Radius
-- Cards: 8-12px
-- Buttons: 6-8px
-- Icons/Badges: 20px+ (pill-shaped)
-
----
-
-## 🎭 Animation Library
-
-### Custom Animations Used Across Components:
-
-1. **fadeInUp** - Fade in while moving up
-2. **slideInFromLeft** - Slide from left with fade
-3. **slideInFromRight** - Slide from right with fade
-4. **float** - Perpetual floating motion
-5. **pulse** - Opacity pulse
-6. **bounce** - Vertical bounce
-7. **expandWidth** - Width expansion
-8. **fillBar** - Progress bar fill
-9. **scrollDown** - Scroll indicator movement
-10. **bounceUp** - Bounce upward motion
-
-### Intersection Observer Hook (`useScrollAnimation.js`)
-
-```javascript
-// Usage pattern:
-const [ref, isVisible] = useScrollAnimation();
-
-// Add class when visible:
-<div className={`content ${isVisible ? 'visible' : ''}`} ref={ref}>
-  <!-- Content -->
-</div>
-
-// CSS:
-.visible {
-  animation: fadeInUp 0.8s ease;
-}
-```
-
----
-
-## 📱 Responsive Design
-
-### Breakpoints:
-- **Desktop**: 1024px+ (full layout)
-- **Tablet**: 768px - 1024px (optimized grids)
-- **Mobile**: Below 768px (single column)
-- **Small Mobile**: Below 480px (minimal spacing)
-
-### Adjustments by Device:
-- Font sizes scale down
-- Padding/margins reduce
-- Grid columns become single column
-- Hero animations simplify
-- Navigation becomes more compact
-
----
-
-## ♿ Accessibility Features
-
-1. **Semantic HTML** - Proper heading hierarchy (h1, h2, h3...)
-2. **Focus States** - Visible outlines on all interactive elements
-3. **Color Contrast** - WCAG AA compliant ratios
-4. **Keyboard Navigation** - All functions accessible via keyboard
-5. **ARIA Labels** - Where needed for screen readers
-6. **Alt Text** - Descriptive for all images
-7. **Form Labels** - Associated with inputs
-8. **Link Text** - Descriptive and meaningful
-
----
-
-## 🚀 Performance Optimizations
-
-1. **Lazy Loading** - Components load as needed
-2. **CSS Grid/Flexbox** - Efficient layout without extra markup
-3. **GPU Acceleration** - Transforms and animations use GPU
-4. **Minimal JavaScript** - CSS-based animations where possible
-5. **Vite Bundling** - Optimized build process
-6. **Fast Load Time** - < 2 seconds typical
-
----
-
-## 🔄 Data Structure
-
-### Project Data Format:
-```javascript
-{
-  id: number,
-  title: string,
-  subtitle: string,
-  description: string,
-  tech: string[],
-  period: string,
-  links: { github: url, demo: url }
-}
-```
-
-### Skill Data Format:
-```javascript
-{
-  category: string,
-  icon: emoji,
-  skills: string[]
-}
-```
-
-### Education Data Format:
-```javascript
-{
-  id: number,
-  degree: string,
-  specialization: string,
-  institution: string,
-  location: string,
-  period: string,
-  cgpa: string,
-  icon: emoji
-}
-```
-
----
-
-## 🛠️ Customization Guide
-
-### Add New Project:
-1. Edit `src/components/Projects.jsx`
-2. Add object to `projectsData` array
-3. Update GitHub/Demo links
-
-### Add New Skill:
-1. Edit `src/components/Skills.jsx`
-2. Add category or skill to arrays
-3. Adjust icon emoji if needed
-
-### Change Color Scheme:
-1. Edit `src/index.css` CSS variables
-2. Update `--primary` and `--secondary` colors
-3. Adjust background gradients
-
-### Modify Animations:
-1. Edit individual component CSS files
-2. Adjust `@keyframes` definitions
-3. Change `animation` property values
-4. Update timing in `transition` properties
-
----
-
-## 📞 Contact & Support
-
-For modifications or questions about this portfolio template:
-- Email: krishnadabas19@gmail.com
-- GitHub: https://github.com/dabaskrishna
-
----
-
-**Last Updated**: 2026-09-01
-**Version**: 1.0.0
-**Status**: Production Ready ✓
+All content is decoupled from UI components and cleanly structured inside **`src/data/portfolioData.js`**:
+- `personalInfo`: Core developer profile details and social links.
+- `skillsData`: 4 exact categories with tooltips.
+- `projectsData`: Structured projects with features, tags, and URLs.
+- `achievementsData`: Milestones and metrics.
+- `educationData`: Academic timeline entries.
+- `testimonialsData`: Feedback quotes.

@@ -24,15 +24,15 @@ export default function Projects() {
             className="mb-0"
           />
 
-          {/* Filter Tabs */}
+          {/* Filter Tabs (All / Web Dev / C++/DSA) */}
           <div className="flex items-center gap-1.5 p-1 rounded-lg border border-white/[0.08] bg-[#12121A] self-start sm:self-auto shadow-sm">
             {projectCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-md text-xs font-mono transition-all cursor-pointer ${
                   activeCategory === category
-                    ? 'bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold shadow-md shadow-violet-500/25'
+                    ? 'bg-teal-600 text-white font-semibold shadow-md shadow-teal-500/20'
                     : 'text-[#9CA3AF] hover:text-[#FFFFFF]'
                 }`}
               >
@@ -57,24 +57,24 @@ export default function Projects() {
                 {/* Card Header: Category Badge + Duration */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3 relative z-10">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20 font-medium">
-                      <FolderGit2 className="w-3.5 h-3.5 text-cyan-400" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20 font-medium">
+                      <FolderGit2 className="w-3.5 h-3.5 text-teal-400" />
                       {project.categoryBadge}
                     </span>
                   </div>
 
                   <span className="flex items-center gap-1.5 text-xs font-mono text-[#9CA3AF]">
-                    <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                    <Calendar className="w-3.5 h-3.5 text-teal-400" />
                     {project.period}
                   </span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="mb-3 relative z-10">
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#FFFFFF] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-cyan-400 transition-all">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#FFFFFF] group-hover:text-teal-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono text-cyan-400 mt-0.5">
+                  <p className="text-xs font-mono text-teal-400/90 mt-0.5">
                     {project.subtitle}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export default function Projects() {
                       key={fIdx}
                       className="flex items-start gap-2.5 text-xs sm:text-sm font-body text-[#9CA3AF]"
                     >
-                      <span className="text-cyan-400 font-mono mt-0.5 font-bold">❯</span>
+                      <span className="text-teal-400 font-mono mt-0.5 font-bold">❯</span>
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -99,12 +99,12 @@ export default function Projects() {
 
                 {/* Footer: Tech Stack Pills + Action Links */}
                 <div className="pt-4 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-                  {/* Tech Stack Pills with warm amber hover */}
+                  {/* Tech Stack Pills */}
                   <div className="flex flex-wrap items-center gap-2">
                     {project.tech.map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#161B22] border border-white/[0.06] text-[#E5E7EB] hover:border-amber-400/40 hover:text-amber-300 transition-colors"
+                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#161B22] border border-white/[0.06] text-[#E5E7EB] hover:border-teal-400/40 hover:text-teal-300 transition-colors"
                       >
                         {t}
                       </span>
@@ -117,7 +117,7 @@ export default function Projects() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-white/[0.1] bg-[#161B22] hover:border-violet-500/50 hover:text-cyan-300 text-xs font-mono text-[#FFFFFF] transition-all hover:shadow-[0_0_15px_rgba(139,92,246,0.3)]"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-white/[0.1] bg-[#161B22] hover:border-teal-500/50 hover:text-teal-300 text-xs font-mono text-[#FFFFFF] transition-all"
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
                       <span>View Code</span>
@@ -127,7 +127,7 @@ export default function Projects() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white text-xs font-mono transition-all font-semibold shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-teal-600 hover:bg-teal-500 text-white text-xs font-mono transition-all font-semibold shadow-md shadow-teal-500/20"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Live Demo</span>

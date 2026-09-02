@@ -21,14 +21,10 @@ export default function IsometricBlueprintGrid() {
 
   return (
     <div
-      className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none opacity-80"
+      className="absolute inset-0 overflow-hidden pointer-events-none -z-10 select-none opacity-70"
       aria-hidden="true"
     >
-      {/* Ambient background blur blobs */}
-      <div className="absolute top-1/4 -right-10 w-[450px] h-[450px] rounded-full bg-violet-600/10 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none" />
-
-      {/* 3D Isometric Perspective Container */}
+      {/* 3D Isometric Perspective Blueprint Container */}
       <div
         className="absolute -right-20 -top-10 w-[700px] h-[700px] sm:w-[900px] sm:h-[900px] transition-transform duration-700 ease-out origin-center"
         style={{
@@ -52,14 +48,14 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 50 0 L 0 0 0 50"
                 fill="none"
-                stroke="rgba(255, 255, 255, 0.055)"
+                stroke="rgba(255, 255, 255, 0.05)"
                 strokeWidth="1"
               />
               <circle
                 cx="0"
                 cy="0"
                 r="1"
-                fill="rgba(6, 182, 212, 0.3)"
+                fill="rgba(20, 184, 166, 0.25)"
               />
             </pattern>
 
@@ -77,14 +73,14 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 150 0 L 0 0 0 150"
                 fill="none"
-                stroke="rgba(139, 92, 246, 0.18)"
-                strokeWidth="1.5"
+                stroke="rgba(20, 184, 166, 0.15)"
+                strokeWidth="1.2"
               />
             </pattern>
 
             <linearGradient id="gridFade" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-              <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
+              <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.35" />
               <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
             </linearGradient>
 
@@ -101,15 +97,15 @@ export default function IsometricBlueprintGrid() {
             mask="url(#gridMask)"
           />
 
-          {/* Architectural Axis Vectors */}
+          {/* Precision Architectural Axis Vectors */}
           <g opacity="0.6">
             <line
               x1="50"
               y1="400"
               x2="750"
               y2="400"
-              stroke="rgba(6, 182, 212, 0.35)"
-              strokeWidth="1.5"
+              stroke="rgba(20, 184, 166, 0.3)"
+              strokeWidth="1.2"
               strokeDasharray="6 4"
             />
             <line
@@ -117,18 +113,9 @@ export default function IsometricBlueprintGrid() {
               y1="50"
               x2="400"
               y2="750"
-              stroke="rgba(139, 92, 246, 0.35)"
-              strokeWidth="1.5"
+              stroke="rgba(20, 184, 166, 0.3)"
+              strokeWidth="1.2"
               strokeDasharray="6 4"
-            />
-            <line
-              x1="100"
-              y1="100"
-              x2="700"
-              y2="700"
-              stroke="rgba(251, 113, 133, 0.25)"
-              strokeWidth="1"
-              strokeDasharray="4 8"
             />
           </g>
 
@@ -136,7 +123,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="410"
             y="70"
-            fill="#06B6D4"
+            fill="#14B8A6"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -148,7 +135,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="600"
             y="390"
-            fill="#8B5CF6"
+            fill="#14B8A6"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -171,15 +158,15 @@ export default function IsometricBlueprintGrid() {
         </svg>
 
         {/* Pulsing Neural Nodes at Grid Intersections */}
-        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-3 h-3 rounded-full bg-cyan-400" />
-        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3.5 h-3.5 rounded-full bg-violet-400" />
-        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2.5 h-2.5 rounded-full bg-rose-400" />
-        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-3 h-3 rounded-full bg-cyan-300" />
-        <div className="absolute top-[450px] left-[450px] pulse-node-5 w-2 h-2 rounded-full bg-amber-400" />
+        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-teal-400" />
+        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-teal-300" />
+        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-emerald-400" />
+        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-teal-400" />
+        <div className="absolute top-[450px] left-[450px] pulse-node-5 w-2 h-2 rounded-full bg-teal-300" />
 
-        {/* High-tech connecting node lines */}
-        <div className="absolute top-[204px] left-[354px] w-[150px] h-[150px] border-t border-l border-cyan-500/25 pointer-events-none" />
-        <div className="absolute top-[354px] left-[304px] w-[200px] h-[150px] border-b border-r border-violet-500/25 pointer-events-none" />
+        {/* Connecting node lines */}
+        <div className="absolute top-[204px] left-[354px] w-[150px] h-[150px] border-t border-l border-teal-500/20 pointer-events-none" />
+        <div className="absolute top-[354px] left-[304px] w-[200px] h-[150px] border-b border-r border-teal-500/20 pointer-events-none" />
       </div>
     </div>
   );

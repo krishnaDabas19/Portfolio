@@ -30,25 +30,25 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="lg:col-span-7 flex flex-col items-start"
           >
-            {/* Status Pill with Warm Amber Sparkle */}
+            {/* Monospace Tag & Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.08] bg-[#12121A]/90 backdrop-blur-md mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-teal-400 animate-ping" />
               <span className="font-mono text-xs text-[#9CA3AF]">
-                <strong className="text-amber-400 font-medium">B.Tech CSE (AI & ML)</strong> @ LPU
+                <strong className="text-white font-medium">B.Tech CSE (AI & ML)</strong> @ LPU
               </span>
               <span className="text-white/20">•</span>
-              <span className="font-mono text-xs text-cyan-400 font-medium flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-amber-400" />
-                Available for internships
+              <span className="font-mono text-xs text-teal-400 font-medium flex items-center gap-1">
+                <Sparkles className="w-3 h-3 text-teal-400" />
+                Available for opportunities
               </span>
             </div>
 
-            {/* Main Heading with Space Grotesk + Gradient */}
+            {/* Main Heading with Space Grotesk */}
             <div className="relative mb-4">
               <HeroSvgBrackets />
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold tracking-tight text-[#FFFFFF] leading-[1.08] pl-2">
                 Hi, I'm <br className="hidden sm:inline" />
-                <span className="gradient-text">
+                <span className="text-teal-400">
                   {personalInfo.name}
                 </span>
               </h1>
@@ -61,14 +61,14 @@ export default function Hero() {
 
             {/* Code-style descriptor */}
             <p className="text-xs sm:text-sm font-mono text-[#9CA3AF] max-w-lg leading-relaxed mb-8">
-              // Engineering responsive web architectures, scalable C++ algorithms, and intelligent systems.
+              // Specializing in full-stack web applications, structured C++ algorithms, and intelligent systems.
             </p>
 
-            {/* CTA Buttons Row with Pulsing Glow on Primary */}
+            {/* CTA Buttons Row */}
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <button
                 onClick={() => scrollTo('projects')}
-                className="glow-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-mono text-xs uppercase tracking-wider font-semibold cursor-pointer shadow-lg active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-mono text-xs uppercase tracking-wider font-semibold cursor-pointer shadow-lg shadow-teal-500/20 active:scale-95 transition-all"
               >
                 <span>View Work</span>
                 <ArrowDown className="w-4 h-4" />
@@ -76,10 +76,10 @@ export default function Hero() {
 
               <button
                 onClick={() => scrollTo('contact')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/[0.12] bg-[#12121A]/90 hover:border-cyan-500/50 hover:bg-[#161B22] text-[#E5E7EB] font-mono text-xs uppercase tracking-wider font-medium transition-all cursor-pointer active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/[0.12] bg-[#12121A]/90 hover:border-teal-500/50 hover:bg-[#161B22] text-[#E5E7EB] font-mono text-xs uppercase tracking-wider font-medium transition-all cursor-pointer active:scale-95"
               >
                 <span>Get in Touch</span>
-                <ArrowUpRight className="w-4 h-4 text-cyan-400" />
+                <ArrowUpRight className="w-4 h-4 text-teal-400" />
               </button>
             </div>
 
@@ -89,9 +89,9 @@ export default function Hero() {
                 href={personalInfo.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-cyan-300 transition-colors group"
+                className="flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-teal-300 transition-colors group"
               >
-                <GithubIcon className="w-4 h-4 text-[#9CA3AF] group-hover:text-cyan-300 group-hover:scale-110 transition-transform" />
+                <GithubIcon className="w-4 h-4 text-[#9CA3AF] group-hover:text-teal-300 group-hover:scale-110 transition-transform" />
                 <span>GitHub</span>
               </a>
 
@@ -101,9 +101,9 @@ export default function Hero() {
                 href={personalInfo.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-cyan-300 transition-colors group"
+                className="flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-teal-300 transition-colors group"
               >
-                <LinkedinIcon className="w-4 h-4 text-[#9CA3AF] group-hover:text-cyan-300 group-hover:scale-110 transition-transform" />
+                <LinkedinIcon className="w-4 h-4 text-[#9CA3AF] group-hover:text-teal-300 group-hover:scale-110 transition-transform" />
                 <span>LinkedIn</span>
               </a>
 
@@ -111,9 +111,9 @@ export default function Hero() {
 
               <a
                 href={personalInfo.socials.email}
-                className="flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-cyan-300 transition-colors group"
+                className="flex items-center gap-2 text-xs font-mono text-[#9CA3AF] hover:text-teal-300 transition-colors group"
               >
-                <Mail className="w-4 h-4 text-[#9CA3AF] group-hover:text-cyan-300 group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 text-[#9CA3AF] group-hover:text-teal-300 group-hover:scale-110 transition-transform" />
                 <span>Email</span>
               </a>
             </div>
@@ -126,20 +126,20 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-5 relative flex items-center justify-center"
           >
-            <div className="relative p-6 rounded-2xl border border-white/[0.08] bg-[#12121A]/80 backdrop-blur-xl shadow-2xl w-full max-w-sm">
+            <div className="relative p-6 rounded-2xl border border-white/[0.08] bg-[#12121A]/90 backdrop-blur-xl shadow-2xl w-full max-w-sm">
               {/* Top Terminal Status Header */}
               <div className="flex items-center justify-between pb-3 mb-5 border-b border-white/[0.06] text-xs font-mono text-[#9CA3AF]">
                 <div className="flex items-center gap-2">
-                  <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-                  <span className="text-cyan-300 font-semibold">dev_profile.sys</span>
+                  <Terminal className="w-3.5 h-3.5 text-teal-400" />
+                  <span className="text-teal-300 font-semibold">dev_profile.sys</span>
                 </div>
-                <span className="text-[10px] text-violet-400">ID: KD_2026</span>
+                <span className="text-[10px] text-teal-400 font-mono">ID: KD_2026</span>
               </div>
 
               {/* Center Profile Avatar Frame */}
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4 group">
-                  <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-violet-500 via-cyan-400 to-rose-400 shadow-xl shadow-violet-500/20">
+                  <div className="relative p-[2px] rounded-full border border-teal-500/40 shadow-xl shadow-teal-500/10">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-[#0A0A0F]">
                       <img
                         src={imgSrc}
@@ -149,13 +149,13 @@ export default function Hero() {
                       />
                     </div>
                   </div>
-                  <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-[#0A0A0F] bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-[#0A0A0F] bg-teal-400 shadow-[0_0_8px_rgba(20,184,166,0.8)]" />
                 </div>
 
                 <h3 className="font-heading font-bold text-lg text-white mb-0.5">
                   {personalInfo.name}
                 </h3>
-                <p className="font-mono text-xs text-cyan-400 mb-4">
+                <p className="font-mono text-xs text-teal-400 mb-4">
                   B.Tech CSE (AI & ML)
                 </p>
 
@@ -167,7 +167,7 @@ export default function Hero() {
                   </div>
                   <div className="p-2 rounded bg-[#161B22]/80 border border-white/[0.04]">
                     <span className="text-[#9CA3AF] block text-[10px]">FOCUS</span>
-                    <span className="text-amber-300 font-medium">Full-Stack & AI</span>
+                    <span className="text-teal-300 font-medium">Full-Stack & AI</span>
                   </div>
                 </div>
               </div>

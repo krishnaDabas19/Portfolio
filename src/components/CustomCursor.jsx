@@ -66,22 +66,22 @@ export default function CustomCursor() {
     <>
       {/* Precision Inner Dot */}
       <div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-cyan-400 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 shadow-[0_0_8px_rgba(6,182,212,0.8)]"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-teal-400 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 shadow-[0_0_8px_rgba(20,184,166,0.8)]"
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${
-            isHovered ? 1.6 : 1
+            isHovered ? 1.5 : 1
           })`,
         }}
       />
 
       {/* Trailing Ring */}
       <div
-        className="fixed top-0 left-0 rounded-full border border-violet-400/60 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-150"
+        className="fixed top-0 left-0 rounded-full border border-teal-500/50 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-150"
         style={{
-          width: isHovered ? '44px' : '26px',
-          height: isHovered ? '44px' : '26px',
-          backgroundColor: isHovered ? 'rgba(139, 92, 246, 0.12)' : 'transparent',
-          borderColor: isHovered ? 'rgba(6, 182, 212, 0.8)' : 'rgba(139, 92, 246, 0.5)',
+          width: isHovered ? '40px' : '24px',
+          height: isHovered ? '40px' : '24px',
+          backgroundColor: isHovered ? 'rgba(20, 184, 166, 0.1)' : 'transparent',
+          borderColor: isHovered ? 'rgba(45, 212, 191, 0.8)' : 'rgba(20, 184, 166, 0.4)',
           transform: `translate3d(${trailingPos.x}px, ${trailingPos.y}px, 0)`,
         }}
       />

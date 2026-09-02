@@ -81,9 +81,9 @@ export const skillsData = [
       { name: 'MongoDB', level: 'Intermediate', tooltip: 'NoSQL Schema Design, Aggregation' },
       { name: 'Git', level: 'Advanced', tooltip: 'Version Control, Branching, Pull Requests' },
       { name: 'GitHub', level: 'Advanced', tooltip: 'CI/CD, Open Source, Collaboration' },
-      { name: 'Figma', level: 'Familiar', tooltip: 'UI Wireframing, Prototypes, Design Systems' },
     ],
   },
+
   {
     category: 'Soft Skills',
     tag: '// professional-traits',

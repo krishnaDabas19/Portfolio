@@ -9,11 +9,11 @@ export default function Achievements() {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'Trophy':
-        return <Trophy className="w-5 h-5 text-amber-400" />;
+        return <Trophy className="w-5 h-5 text-teal-400" />;
       case 'Code2':
-        return <Code2 className="w-5 h-5 text-cyan-400" />;
+        return <Code2 className="w-5 h-5 text-teal-400" />;
       default:
-        return <Sparkles className="w-5 h-5 text-rose-400" />;
+        return <Sparkles className="w-5 h-5 text-teal-400" />;
     }
   };
 
@@ -37,20 +37,20 @@ export default function Achievements() {
             {achievementsData.map((item, index) => (
               <div
                 key={item.id}
-                className="p-6 sm:p-7 rounded-2xl border border-white/[0.08] bg-[#12121A] hover:border-violet-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+                className="p-6 sm:p-7 rounded-2xl border border-white/[0.08] bg-[#12121A] hover:border-teal-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-11 h-11 rounded-xl border border-white/[0.08] bg-[#161B22] flex items-center justify-center group-hover:border-amber-400/40 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.25)] transition-all">
+                    <div className="w-11 h-11 rounded-xl border border-white/[0.08] bg-[#161B22] flex items-center justify-center group-hover:border-teal-400/40 group-hover:shadow-[0_0_15px_rgba(20,184,166,0.25)] transition-all">
                       {getIcon(item.icon)}
                     </div>
 
-                    <span className="font-mono text-[11px] text-cyan-400/80 font-bold">
+                    <span className="font-mono text-[11px] text-teal-400/80 font-bold">
                       0{index + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-heading font-semibold text-[#FFFFFF] mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-violet-400 group-hover:to-cyan-400 transition-colors">
+                  <h3 className="text-base font-heading font-semibold text-[#FFFFFF] mb-2 group-hover:text-teal-400 transition-colors">
                     {item.title}
                   </h3>
 
@@ -59,12 +59,12 @@ export default function Achievements() {
                   </p>
                 </div>
 
-                {/* Counter / Metric Badge with Gradient */}
+                {/* Counter / Metric Badge with Teal */}
                 <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-baseline justify-between">
                   <span className="font-mono text-xs text-[#9CA3AF]">
                     {item.metricLabel}
                   </span>
-                  <div className="text-xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">
+                  <div className="text-xl font-bold font-mono text-teal-400">
                     {item.metric === '50+' ? (
                       <AnimatedCounter target="50" suffix="+" />
                     ) : item.metric === '100%' ? (
