@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownRight, ArrowUpRight, Terminal } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, FileDown, Sparkles } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './Icons';
+import { personalInfo } from '../data/portfolioData';
 import IsometricBlueprintGrid from './IsometricBlueprintGrid';
 import { HeroSvgBrackets } from './SvgLineDraw';
 
 export default function Hero() {
+  const [imgSrc, setImgSrc] = useState('/assets/profile.jpg');
+
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -13,77 +17,132 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative pt-10 pb-16 sm:pt-16 sm:pb-20 overflow-hidden border-b border-[#E5E2DC]">
+    <section id="hero" className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden border-b border-[#E5E2DC]">
+      {/* Schematic Background Grid */}
       <IsometricBlueprintGrid />
 
-      <div className="w-full relative z-10">
+      <div className="editorial-container relative z-10 w-full">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="space-y-8"
         >
-          {/* Index Section Tag */}
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-[#B5654A] font-bold uppercase tracking-widest">
-              // 00. index introduction
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#E5E2DC] bg-[#FFFFFF] shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-[#BF5B2E] animate-ping" />
+            <span className="font-mono text-xs text-[#8A8A8A]">
+              <strong className="text-[#1A1A1A] font-medium">B.Tech CSE (AI & ML)</strong> @ Lovely Professional University
             </span>
-            <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
-            <span className="font-mono text-[10px] text-[#7A8B5C] font-semibold">
-              SYS: READY
+            <span className="text-[#8A8A8A]/40 hidden sm:inline">•</span>
+            <span className="font-mono text-xs text-[#BF5B2E] font-medium hidden sm:inline-flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-[#BF5B2E]" />
+              Open to Opportunities
             </span>
           </div>
 
-          {/* Asymmetric Typographic Statement */}
+          {/* Main Typographic Intro with Integrated Profile Photo */}
           <div className="relative">
             <HeroSvgBrackets />
 
-            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-end">
-              {/* Oversized Typographic Name / Monogram Art */}
-              <div className="xl:col-span-8 pl-1 sm:pl-3">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#7A8B5C] font-semibold block mb-2">
-                  Computer Science (AI & ML)
+            <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 pt-2">
+              {/* Profile Photo (Modest ~110px softly-rounded square with Burnt Amber border) */}
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-2 border-[#BF5B2E] overflow-hidden bg-[#FFFFFF] shadow-xs shrink-0">
+                <img
+                  src={imgSrc}
+                  alt={personalInfo.name}
+                  className="w-full h-full object-cover"
+                  onError={() => setImgSrc('/assets/profile.svg')}
+                />
+              </div>
+
+              {/* Heading */}
+              <div>
+                <span className="font-mono text-xs uppercase tracking-widest text-[#8A8A8A] block mb-1">
+                  // Portfolio & Engineering Index
                 </span>
-                <h1 className="text-5xl sm:text-7xl md:text-8xl font-heading font-black tracking-tighter text-[#1A1A1A] leading-[0.95]">
-                  KRISHNA <br />
-                  <span className="text-[#B5654A] inline-block hover:translate-x-2 transition-transform duration-300">
-                    DABAS
+                <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-[#1A1A1A] tracking-tight leading-[1.05]">
+                  Hi, I'm <br className="hidden sm:inline" />
+                  <span className="text-[#BF5B2E]">
+                    {personalInfo.name}
                   </span>
                 </h1>
               </div>
-
-              {/* Stacked Side Intro Narrative */}
-              <div className="xl:col-span-4 space-y-4 pb-2">
-                <div className="p-4 rounded-xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-2xs">
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#B5654A] mb-1 font-semibold">
-                    <Terminal className="w-3.5 h-3.5" />
-                    <span>LPU / B.Tech 2025–2029</span>
-                  </div>
-                  <p className="font-body text-xs text-[#3F3F3F] leading-relaxed">
-                    Merging algorithmic discipline in C++ with modern full-stack web engineering & artificial intelligence.
-                  </p>
-                </div>
-
-                {/* Micro CTA Navigation */}
-                <div className="flex flex-wrap gap-2.5">
-                  <button
-                    onClick={() => scrollTo('projects')}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#B5654A] hover:bg-[#9E523A] text-white font-mono text-xs font-semibold cursor-pointer shadow-xs transition-all"
-                  >
-                    <span>03 / Selected Works</span>
-                    <ArrowDownRight className="w-3.5 h-3.5" />
-                  </button>
-
-                  <button
-                    onClick={() => scrollTo('contact')}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#B5654A] text-[#1A1A1A] font-mono text-xs font-medium cursor-pointer shadow-2xs transition-all"
-                  >
-                    <span>Contact</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#B5654A]" />
-                  </button>
-                </div>
-              </div>
             </div>
+          </div>
+
+          {/* Tagline & Short Narrative Bio */}
+          <div className="space-y-3 max-w-2xl">
+            <p className="text-base sm:text-xl font-body text-[#3F3F3F] leading-relaxed">
+              {personalInfo.tagline}
+            </p>
+            <p className="text-xs sm:text-sm font-mono text-[#8A8A8A] leading-relaxed">
+              // Specializing in full-stack web applications, structured C++ algorithms, and intelligent systems.
+            </p>
+          </div>
+
+          {/* Action CTAs Row */}
+          <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <a
+              href={personalInfo.resumeUrl}
+              download="Krishna_Dabas_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#BF5B2E] hover:bg-[#A64B23] text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-md shadow-[#BF5B2E]/20 transition-all cursor-pointer"
+            >
+              <FileDown className="w-4 h-4" />
+              <span>Download Resume</span>
+            </a>
+
+            <button
+              onClick={() => scrollTo('projects')}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#BF5B2E] text-[#1A1A1A] font-mono text-xs uppercase tracking-wider font-medium shadow-2xs transition-all cursor-pointer"
+            >
+              <span>03 / View Works</span>
+              <ArrowDownRight className="w-4 h-4 text-[#BF5B2E]" />
+            </button>
+
+            <button
+              onClick={() => scrollTo('contact')}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#BF5B2E] text-[#1A1A1A] font-mono text-xs uppercase tracking-wider font-medium shadow-2xs transition-all cursor-pointer"
+            >
+              <span>Get in Touch</span>
+              <ArrowUpRight className="w-4 h-4 text-[#BF5B2E]" />
+            </button>
+          </div>
+
+          {/* Social Channels Row */}
+          <div className="flex items-center gap-4 pt-4 border-t border-[#E5E2DC] w-full max-w-md text-xs font-mono text-[#8A8A8A]">
+            <a
+              href={personalInfo.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[#BF5B2E] transition-colors group"
+            >
+              <GithubIcon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <span>GitHub</span>
+            </a>
+
+            <span>•</span>
+
+            <a
+              href={personalInfo.socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[#BF5B2E] transition-colors group"
+            >
+              <LinkedinIcon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <span>LinkedIn</span>
+            </a>
+
+            <span>•</span>
+
+            <a
+              href={personalInfo.socials.email}
+              className="hover:text-[#BF5B2E] transition-colors"
+            >
+              Email Direct
+            </a>
           </div>
         </motion.div>
       </div>

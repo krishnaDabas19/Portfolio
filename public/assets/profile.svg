@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
     <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F5F3EC"/>
-      <stop offset="100%" stop-color="#EBE7DC"/>
+      <stop offset="0%" stop-color="#F5F2EB"/>
+      <stop offset="100%" stop-color="#E8E4D8"/>
     </linearGradient>
   </defs>
   <rect width="400" height="400" fill="url(#avatarBg)" rx="48"/>
-  <rect x="16" y="16" width="368" height="368" fill="none" stroke="#B5654A" stroke-width="2.5" stroke-dasharray="8 6" rx="40" opacity="0.6"/>
+  <rect x="16" y="16" width="368" height="368" fill="none" stroke="#BF5B2E" stroke-width="2.5" stroke-dasharray="8 6" rx="40" opacity="0.65"/>
   
   <!-- Silhouette Vector & Geometric Pattern -->
   <circle cx="200" cy="145" r="54" fill="#FFFFFF" stroke="#E5E2DC" stroke-width="2"/>
   <path d="M100 315 C100 235, 300 235, 300 315 Z" fill="#FFFFFF" stroke="#E5E2DC" stroke-width="2"/>
   
-  <text x="200" y="260" font-family="'Space Grotesk', sans-serif" font-size="46" font-weight="800" fill="#B5654A" text-anchor="middle" letter-spacing="-1">KD</text>
-  <text x="200" y="350" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#7A8B5C" text-anchor="middle" letter-spacing="2">// KRISHNA DABAS</text>
+  <text x="200" y="260" font-family="'Space Grotesk', sans-serif" font-size="46" font-weight="800" fill="#BF5B2E" text-anchor="middle" letter-spacing="-1">KD</text>
+  <text x="200" y="350" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#BF5B2E" text-anchor="middle" letter-spacing="2">// KRISHNA DABAS</text>
 </svg>

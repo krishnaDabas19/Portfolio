@@ -56,8 +56,8 @@ export default function Navbar() {
           className="group flex items-center gap-2.5 focus:outline-none cursor-pointer"
           aria-label="Scroll to top"
         >
-          <div className="w-8 h-8 rounded-full border border-[#E5E2DC] bg-[#FFFFFF] group-hover:border-[#C2542D] flex items-center justify-center shadow-xs transition-all duration-200">
-            <span className="font-mono text-xs font-bold tracking-tight text-[#C2542D]">
+          <div className="w-8 h-8 rounded-full border border-[#E5E2DC] bg-[#FFFFFF] group-hover:border-[#BF5B2E] flex items-center justify-center shadow-xs transition-all duration-200">
+            <span className="font-mono text-xs font-bold tracking-tight text-[#BF5B2E]">
               {personalInfo.initials}
             </span>
           </div>
@@ -76,14 +76,14 @@ export default function Navbar() {
                 onClick={() => handleNavClick(link.id)}
                 className={`relative py-1 text-xs font-mono uppercase tracking-wider transition-colors duration-200 cursor-pointer group ${
                   isActive
-                    ? 'text-[#C2542D] font-semibold'
+                    ? 'text-[#BF5B2E] font-bold'
                     : 'text-[#8A8A8A] hover:text-[#1A1A1A]'
                 }`}
               >
                 {link.label}
-                {/* Active Underline in Burnt Sienna */}
+                {/* Active Underline in Burnt Amber */}
                 <span
-                  className={`absolute left-0 bottom-0 h-[2px] bg-[#C2542D] transition-all duration-200 ${
+                  className={`absolute left-0 bottom-0 h-[2px] bg-[#BF5B2E] transition-all duration-200 ${
                     isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
@@ -92,13 +92,13 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Action Button */}
+        {/* Action Button & Mobile Menu Toggle */}
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => handleNavClick('contact')}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#C2542D]/30 bg-[#C2542D]/10 hover:bg-[#C2542D]/15 text-[#C2542D] text-xs font-mono font-medium transition-colors cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#BF5B2E]/30 bg-[#BF5B2E]/10 hover:bg-[#BF5B2E]/15 text-[#BF5B2E] text-xs font-mono font-medium transition-colors cursor-pointer"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C2542D] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#BF5B2E] animate-pulse" />
             <span>Open to Work</span>
           </button>
 
@@ -124,12 +124,14 @@ export default function Navbar() {
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
                   className={`text-left py-2 text-sm font-mono flex items-center justify-between cursor-pointer ${
-                    isActive ? 'text-[#C2542D] font-semibold' : 'text-[#8A8A8A]'
+                    isActive ? 'text-[#BF5B2E] font-semibold' : 'text-[#8A8A8A]'
                   }`}
                 >
-                  <span>// {link.label.toLowerCase()}</span>
+                  <span>
+                    // {link.index}. {link.label.toLowerCase()}
+                  </span>
                   {isActive && (
-                    <span className="w-2 h-2 rounded-full bg-[#C2542D]" />
+                    <span className="w-2 h-2 rounded-full bg-[#BF5B2E]" />
                   )}
                 </button>
               );

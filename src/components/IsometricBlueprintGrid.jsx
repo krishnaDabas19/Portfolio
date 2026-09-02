@@ -52,7 +52,7 @@ export default function IsometricBlueprintGrid() {
                 cx="0"
                 cy="0"
                 r="1"
-                fill="#B5654A"
+                fill="#BF5B2E"
                 fillOpacity="0.3"
               />
             </pattern>
@@ -71,7 +71,7 @@ export default function IsometricBlueprintGrid() {
               <path
                 d="M 150 0 L 0 0 0 150"
                 fill="none"
-                stroke="#B5654A"
+                stroke="#BF5B2E"
                 strokeOpacity="0.2"
                 strokeWidth="1.2"
               />
@@ -101,7 +101,7 @@ export default function IsometricBlueprintGrid() {
               y1="400"
               x2="750"
               y2="400"
-              stroke="#B5654A"
+              stroke="#BF5B2E"
               strokeOpacity="0.3"
               strokeWidth="1.2"
               strokeDasharray="6 4"
@@ -111,7 +111,7 @@ export default function IsometricBlueprintGrid() {
               y1="50"
               x2="400"
               y2="750"
-              stroke="#B5654A"
+              stroke="#BF5B2E"
               strokeOpacity="0.3"
               strokeWidth="1.2"
               strokeDasharray="6 4"
@@ -121,7 +121,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="410"
             y="70"
-            fill="#B5654A"
+            fill="#BF5B2E"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -133,7 +133,7 @@ export default function IsometricBlueprintGrid() {
           <text
             x="600"
             y="390"
-            fill="#7A8B5C"
+            fill="#8A8A8A"
             fontSize="9"
             fontFamily="'JetBrains Mono', monospace"
             letterSpacing="0.1em"
@@ -143,10 +143,10 @@ export default function IsometricBlueprintGrid() {
           </text>
         </svg>
 
-        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-[#B5654A]" />
-        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-[#7A8B5C]" />
-        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-[#B5654A]" />
-        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-[#7A8B5C]" />
+        <div className="absolute top-[200px] left-[350px] pulse-node-1 w-2.5 h-2.5 rounded-full bg-[#BF5B2E]" />
+        <div className="absolute top-[350px] left-[500px] pulse-node-2 w-3 h-3 rounded-full bg-[#A64B23]" />
+        <div className="absolute top-[500px] left-[300px] pulse-node-3 w-2 h-2 rounded-full bg-[#BF5B2E]" />
+        <div className="absolute top-[250px] left-[600px] pulse-node-4 w-2.5 h-2.5 rounded-full bg-[#A64B23]" />
       </div>
     </div>
   );

@@ -66,7 +66,7 @@ export default function CustomCursor() {
     <>
       {/* Precision Inner Dot */}
       <div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#B5654A] pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 shadow-xs"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#BF5B2E] pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 shadow-xs"
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${
             isHovered ? 1.5 : 1
@@ -76,12 +76,12 @@ export default function CustomCursor() {
 
       {/* Trailing Ring */}
       <div
-        className="fixed top-0 left-0 rounded-full border border-[#B5654A]/40 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-150"
+        className="fixed top-0 left-0 rounded-full border border-[#BF5B2E]/40 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-150"
         style={{
           width: isHovered ? '38px' : '22px',
           height: isHovered ? '38px' : '22px',
-          backgroundColor: isHovered ? 'rgba(181, 101, 74, 0.08)' : 'transparent',
-          borderColor: isHovered ? 'rgba(181, 101, 74, 0.8)' : 'rgba(181, 101, 74, 0.35)',
+          backgroundColor: isHovered ? 'rgba(191, 91, 46, 0.08)' : 'transparent',
+          borderColor: isHovered ? 'rgba(191, 91, 46, 0.8)' : 'rgba(191, 91, 46, 0.35)',
           transform: `translate3d(${trailingPos.x}px, ${trailingPos.y}px, 0)`,
         }}
       />

@@ -2,13 +2,13 @@
 
 @layer base {
   :root {
-    /* Light Only & Minimal Theme */
+    /* Light Only Minimal Theme */
     --bg: #FAFAF8;
     --bg-card: #FFFFFF;
     --bg-card-hover: #FFFFFF;
-    --bg-subtle: #F5F3EC;
+    --bg-subtle: #F4F2EB;
     --border: #E5E2DC;
-    --border-hover: #B5654A;
+    --border-hover: #BF5B2E;
     
     /* Typography Colors */
     --text-primary: #1A1A1A;
@@ -16,15 +16,12 @@
     --text-muted: #8A8A8A;
     --text-dim: #9E9E9E;
 
-    /* Option A Palette: Clay Terracotta (#B5654A) + Muted Olive (#7A8B5C) */
-    --accent: #B5654A;
-    --accent-hover: #9E523A;
-    --accent-dark: #823F2B;
-    --accent-dim: rgba(181, 101, 74, 0.08);
-    --accent-border: rgba(181, 101, 74, 0.25);
-
-    --accent-secondary: #7A8B5C;
-    --accent-secondary-dim: rgba(122, 139, 92, 0.1);
+    /* Option A: Burnt Amber (#BF5B2E) - Warm Rust-Orange Crafted Accent */
+    --accent: #BF5B2E;
+    --accent-hover: #A64B23;
+    --accent-dark: #8C3C19;
+    --accent-dim: rgba(191, 91, 46, 0.08);
+    --accent-border: rgba(191, 91, 46, 0.25);
 
     /* Fonts */
     --font-heading: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -67,8 +64,8 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: rgba(181, 101, 74, 0.18);
-  color: #823F2B;
+  background-color: rgba(191, 91, 46, 0.18);
+  color: #8C3C19;
 }
 
 /* Custom Minimal Scrollbar */
@@ -115,17 +112,17 @@ body {
   text-transform: uppercase;
 }
 
-/* Editorial Container */
+/* Single Column Editorial Container (Max Width 4xl / 5xl centered) */
 .editorial-container {
-  max-width: 880px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
   width: 100%;
 }
 
 @media (min-width: 640px) {
   .editorial-container {
-    padding: 0 2rem;
+    padding: 0 2.5rem;
   }
 }
 
@@ -207,21 +204,7 @@ body {
 
 .scan-card:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 12px 35px -10px rgba(181, 101, 74, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
-}
-
-/* Terminal Masked Wipe for Headings */
-@keyframes terminalScanWipe {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-.terminal-wipe {
-  animation: terminalScanWipe 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 12px 35px -10px rgba(191, 91, 46, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
 }
 
 /* Isometric Blueprint Node Glow */
@@ -251,8 +234,4 @@ body {
 
 .pulse-node-4 {
   animation: nodePulseGlow 5.1s infinite ease-in-out 0.7s;
-}
-
-.pulse-node-5 {
-  animation: nodePulseGlow 3.9s infinite ease-in-out 1.9s;
 }

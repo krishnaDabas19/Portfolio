@@ -3,7 +3,7 @@ import './App.css';
 import Preloader from './components/Preloader';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import CustomCursor from './components/CustomCursor';
-import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -19,22 +19,20 @@ export default function App() {
       <Preloader />
       <ScrollProgressBar />
 
-      {/* Asymmetric 2-Column Editorial Split Layout */}
-      <div className="flex flex-col lg:flex-row min-h-screen max-w-[1600px] mx-auto">
-        {/* Left Persistent Sidebar (~30% on desktop) */}
-        <Sidebar />
+      {/* Sticky Top Navbar */}
+      <Navbar />
 
-        {/* Right Scrollable Editorial Content Area (~70% on desktop) */}
-        <main className="w-full lg:w-[68%] xl:w-[72%] p-6 sm:p-10 lg:p-12 xl:p-16 min-h-screen">
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <ExperienceEducation />
-          <Contact />
-          <Footer />
-        </main>
-      </div>
+      {/* Single-Column Page Layout */}
+      <main className="w-full">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <ExperienceEducation />
+        <Contact />
+      </main>
+
+      <Footer />
     </div>
   );
 }

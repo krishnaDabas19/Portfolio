@@ -2,7 +2,7 @@
  * =========================================================================
  * KRISHNA DABAS - PORTFOLIO DATA CONFIGURATION
  * =========================================================================
- * Asymmetric Editorial Portfolio Data Store
+ * Single-Column Editorial Developer Portfolio Data Store
  */
 
 export const personalInfo = {
@@ -12,7 +12,7 @@ export const personalInfo = {
   tagline:
     'B.Tech CSE (AI & ML) student at Lovely Professional University, passionate about full-stack development and building intelligent web applications.',
   shortBio:
-    'Passionate about building full-stack web applications and exploring AI/ML, always learning and shipping clean, robust projects.',
+    'Focused on constructing scalable web applications, modular algorithms in C++, and exploring intelligent AI/ML systems with clean, maintainable code.',
   email: 'krishnadabas19@gmail.com',
   phone: '+91-8512004546',
   location: 'Phagwara, Punjab',
@@ -26,11 +26,11 @@ export const personalInfo = {
   },
 };
 
-export const tableOfContents = [
+export const navLinks = [
   { index: '01', id: 'about', label: 'About' },
   { index: '02', id: 'skills', label: 'Toolbox' },
   { index: '03', id: 'projects', label: 'Selected Works' },
-  { index: '04', id: 'experience', label: 'Milestones & Academics' },
+  { index: '04', id: 'experience', label: 'Milestones' },
   { index: '05', id: 'contact', label: 'Contact' },
 ];
 
@@ -53,7 +53,7 @@ export const softSkills = [
 export const toolboxCategories = [
   {
     label: '// 01. languages & core systems',
-    description: 'Foundational programming languages and low-level memory/algorithmic logic.',
+    description: 'Foundational programming languages and low-level algorithmic logic.',
     skills: [
       { name: 'C++', weight: 'primary', note: 'Core DSA & OOP', experience: 'Advanced' },
       { name: 'JavaScript', weight: 'primary', note: 'ES6+, Async, Browser API', experience: 'Advanced' },
@@ -205,22 +205,5 @@ export const educationData = [
     status: 'Completed',
     details:
       'Strong academic record with foundational coursework across Mathematics, Science, and Social Sciences.',
-  },
-];
-
-export const testimonialsData = [
-  {
-    id: 1,
-    name: 'Peer Collaborator',
-    role: 'Full-Stack Developer & Teammate',
-    quote:
-      'Krishna brings sharp attention to detail and strong ownership to frontend architectures. Always ready to debug and optimize complex workflows.',
-  },
-  {
-    id: 2,
-    name: 'Project Mentor',
-    role: 'Technical Advisor',
-    quote:
-      'Consistently demonstrates dedication to learning modern web stacks and foundational DSA. Quick at turning concepts into clean, usable code.',
   },
 ];
