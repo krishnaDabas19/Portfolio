@@ -7,7 +7,8 @@ import IsometricBlueprintGrid from './IsometricBlueprintGrid';
 import { HeroSvgBrackets } from './SvgLineDraw';
 
 export default function Hero() {
-  const [imgSrc, setImgSrc] = useState('/assets/profile.jpg');
+  const [imgSrc, setImgSrc] = useState('./assets/profile.jpg');
+
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
