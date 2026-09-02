@@ -2,8 +2,7 @@
  * =========================================================================
  * KRISHNA DABAS - PORTFOLIO DATA CONFIGURATION
  * =========================================================================
- * This file contains all personal information, bio, skills, projects,
- * education, and achievements. Update this file to customize or add content!
+ * Asymmetric Editorial Portfolio Data Store
  */
 
 export const personalInfo = {
@@ -18,8 +17,8 @@ export const personalInfo = {
   phone: '+91-8512004546',
   location: 'Phagwara, Punjab',
   university: 'Lovely Professional University',
-  profileImage: '/assets/profile.jpg', // Place your picture in public/assets/profile.jpg
-  resumeUrl: '/assets/resume.pdf', // Place your resume in public/assets/resume.pdf
+  profileImage: '/assets/profile.jpg',
+  resumeUrl: '/assets/resume.pdf',
   socials: {
     github: 'https://github.com/dabaskrishna',
     linkedin: 'https://www.linkedin.com/in/krishna-dabas/',
@@ -27,13 +26,12 @@ export const personalInfo = {
   },
 };
 
-export const navLinks = [
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'achievements', label: 'Achievements' },
-  { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
+export const tableOfContents = [
+  { index: '01', id: 'about', label: 'About' },
+  { index: '02', id: 'skills', label: 'Toolbox' },
+  { index: '03', id: 'projects', label: 'Selected Works' },
+  { index: '04', id: 'experience', label: 'Milestones & Academics' },
+  { index: '05', id: 'contact', label: 'Contact' },
 ];
 
 export const nowBuilding = [
@@ -46,97 +44,97 @@ export const nowBuilding = [
 export const softSkills = [
   'Problem Solving',
   'Team Collaboration',
-  'Communication',
+  'Technical Communication',
   'Time Management',
-  'Adaptability',
+  'Rapid Adaptability',
 ];
 
-export const skillsData = [
+// Editorial "Toolbox" Data with intentional visual weight hierarchy
+export const toolboxCategories = [
   {
-    category: 'Languages',
-    tag: '// core-languages',
-    items: [
-      { name: 'C', level: 'Intermediate', tooltip: 'Pointers, Memory Management, File IO' },
-      { name: 'C++', level: 'Intermediate / Advanced', tooltip: 'OOP, STL, Data Structures & Algorithms' },
-      { name: 'Python', level: 'Intermediate', tooltip: 'AI/ML scripting, automation, scripting' },
-      { name: 'JavaScript', level: 'Advanced', tooltip: 'ES6+, Asynchronous JS, DOM manipulation' },
+    label: '// 01. languages & core systems',
+    description: 'Foundational programming languages and low-level memory/algorithmic logic.',
+    skills: [
+      { name: 'C++', weight: 'primary', note: 'Core DSA & OOP', experience: 'Advanced' },
+      { name: 'JavaScript', weight: 'primary', note: 'ES6+, Async, Browser API', experience: 'Advanced' },
+      { name: 'Python', weight: 'secondary', note: 'AI/ML scripting', experience: 'Intermediate' },
+      { name: 'C', weight: 'tertiary', note: 'Pointers & Systems', experience: 'Intermediate' },
     ],
   },
   {
-    category: 'Web Technologies',
-    tag: '// frontend-backend',
-    items: [
-      { name: 'HTML', level: 'Advanced', tooltip: 'Semantic HTML5, Accessibility, SEO' },
-      { name: 'CSS', level: 'Advanced', tooltip: 'Responsive Design, Flexbox, Grid, Tailwind' },
-      { name: 'JavaScript', level: 'Advanced', tooltip: 'Modern JS, Event Loop, Modular Code' },
-      { name: 'React.js', level: 'Advanced', tooltip: 'Hooks, State Management, Component Architecture' },
-      { name: 'Node.js', level: 'Intermediate', tooltip: 'Express.js, REST APIs, Backend Logic' },
+    label: '// 02. modern web engineering',
+    description: 'Declarative component design, client-side state, and full-stack runtime.',
+    skills: [
+      { name: 'React.js', weight: 'primary', note: 'Component architecture, Hooks, Context', experience: 'Advanced' },
+      { name: 'Node.js', weight: 'secondary', note: 'REST APIs & backend runtime', experience: 'Intermediate' },
+      { name: 'HTML5 & CSS3', weight: 'secondary', note: 'Semantic structure & responsive layouts', experience: 'Advanced' },
+      { name: 'Tailwind CSS', weight: 'secondary', note: 'Utility-first modern styling', experience: 'Advanced' },
     ],
   },
   {
-    category: 'Databases & Tools',
-    tag: '// tools-storage',
-    items: [
-      { name: 'MySQL', level: 'Intermediate', tooltip: 'Relational DB Design, SQL Queries, Joins' },
-      { name: 'MongoDB', level: 'Intermediate', tooltip: 'NoSQL Schema Design, Aggregation' },
-      { name: 'Git', level: 'Advanced', tooltip: 'Version Control, Branching, Pull Requests' },
-      { name: 'GitHub', level: 'Advanced', tooltip: 'CI/CD, Open Source, Collaboration' },
+    label: '// 03. storage, versioning & tools',
+    description: 'Relational & document databases with collaborative workflow toolsets.',
+    skills: [
+      { name: 'MySQL', weight: 'secondary', note: 'Relational queries, Schema design', experience: 'Intermediate' },
+      { name: 'MongoDB', weight: 'tertiary', note: 'NoSQL collections & schemas', experience: 'Intermediate' },
+      { name: 'Git & GitHub', weight: 'secondary', note: 'Branching, PRs, Version control', experience: 'Advanced' },
     ],
   },
-
   {
-    category: 'Soft Skills',
-    tag: '// professional-traits',
-    items: [
-      { name: 'Problem Solving', level: 'High', tooltip: 'Analytical thinking & structured debugging' },
-      { name: 'Team Collaboration', level: 'High', tooltip: 'Pair programming, communication & git workflows' },
-      { name: 'Communication', level: 'High', tooltip: 'Technical documentation & clear presentations' },
-      { name: 'Time Management', level: 'High', tooltip: 'Prioritizing features & agile delivery' },
-      { name: 'Adaptability', level: 'High', tooltip: 'Quick learner for new frameworks & stacks' },
+    label: '// 04. working methodology',
+    description: 'Interpersonal disciplines that elevate team execution.',
+    skills: [
+      { name: 'Structured Problem Solving', weight: 'secondary', note: 'Step-by-step root cause analysis', experience: 'High' },
+      { name: 'Pair Collaboration', weight: 'secondary', note: 'Team alignment & code reviews', experience: 'High' },
+      { name: 'Technical Documentation', weight: 'tertiary', note: 'Clean markdown & architecture specs', experience: 'High' },
     ],
   },
 ];
-
-export const projectCategories = ['All', 'Web Dev', 'C++/DSA'];
 
 export const projectsData = [
   {
     id: 'orvexon-studio',
+    number: '01',
     title: 'Orvexon Studio',
-    subtitle: 'Creative Portfolio Platform',
-    category: 'Web Dev',
-    categoryBadge: 'Web Project',
+    subtitle: 'Creative Agency & Portfolio Platform',
+    category: 'Web Engineering',
+    categoryBadge: 'Full-Stack Web',
     period: 'Jan 2026 – Feb 2026',
     summary:
-      'A responsive creative portfolio/agency-style platform designed to showcase projects, services, and creative narratives with high visual fidelity and modular UX.',
+      'A bespoke portfolio & agency platform constructed to showcase creative products, services, and visual narratives with fluid interactions, reusable UI modules, and responsive design.',
+    architecture:
+      'Engineered with React.js and modern styling primitives, leveraging modular layout systems for dynamic content presentation and smooth viewport scaling across devices.',
     features: [
-      'Designed and developed a responsive website to showcase creative projects and services.',
-      'Created interactive sections for projects, services, and contact information.',
-      'Implemented responsive layouts and reusable UI components for different screen sizes.',
-      'Focused on improving visual presentation and user experience using modern design principles.',
+      'Designed and developed interactive showcases for projects and digital services.',
+      'Constructed modular component hierarchy with responsive typography and fluid layouts.',
+      'Implemented clean, reusable UI primitives for varied viewport breakpoints.',
+      'Optimized asset loading and accessibility for seamless navigation.',
     ],
-    tech: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Figma'],
+    tech: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
     links: {
       github: 'https://github.com/dabaskrishna',
-      demo: '#',
+      demo: 'https://krishnadabas19.github.io/Portfolio/',
     },
   },
   {
     id: 'student-record-system',
+    number: '02',
     title: 'Student Record Management System',
-    subtitle: 'CRUD Console Application',
-    category: 'C++/DSA',
-    categoryBadge: 'C++/DSA',
+    subtitle: 'High-Performance Persistent Console Architecture',
+    category: 'C++ Systems & Algorithms',
+    categoryBadge: 'Systems / C++',
     period: 'Mar 2026 – Apr 2026',
     summary:
-      'A robust C++ console-based system to add, search, update, delete, and persist student academic records using structured file handling.',
+      'A robust C++ console application designed to add, search, update, delete, and persist student academic records reliably using structured file handling and OOP patterns.',
+    architecture:
+      'Employs encapsulated C++ classes and binary/text file streams to guarantee data integrity across sessions without database overhead.',
     features: [
-      'Developed features to add, search, update, delete, and display student records.',
-      'Implemented file handling for storing and retrieving student information reliably between sessions.',
-      'Applied core C++ concepts including functions, arrays, structures, and OOP principles.',
-      'Created a simple, intuitive menu-driven interface for easy record management.',
+      'Engineered complete CRUD capabilities for extensive student academic profiles.',
+      'Implemented persistent file streams ensuring zero data loss across restarts.',
+      'Applied modular OOP principles (classes, encapsulation, data structures).',
+      'Created an intuitive terminal menu system with input validation.',
     ],
-    tech: ['C++', 'Data Structures', 'File Handling', 'OOP'],
+    tech: ['C++', 'Data Structures', 'File Handling', 'OOP', 'Algorithms'],
     links: {
       github: 'https://github.com/dabaskrishna',
       demo: '#',
@@ -150,25 +148,25 @@ export const achievementsData = [
     icon: 'Trophy',
     title: 'Technical Events & Hackathons',
     description:
-      'Participated in college-level technical events and coding activities, demonstrating consistent interest in software development and team collaboration.',
+      'Active participant in university technical hackathons and algorithmic competitions, demonstrating software craftsmanship and team collaboration under constraints.',
     metric: 'Active',
     metricLabel: 'Participant',
   },
   {
     id: 2,
     icon: 'Code2',
-    title: '50+ Problems Solved',
+    title: '50+ Algorithmic Problems Solved',
     description:
-      'Solved 50+ programming problems across online coding platforms, sharpening algorithmic problem-solving and core data structure concepts.',
+      'Solved 50+ programming problems on competitive coding platforms, refining core mastery in dynamic programming, recursion, graphs, and OOP structures.',
     metric: '50+',
-    metricLabel: 'DSA Problems',
+    metricLabel: 'Problems Solved',
   },
   {
     id: 3,
     icon: 'Sparkles',
-    title: 'AI & Web Exploration',
+    title: 'Full-Stack & AI Systems Exploration',
     description:
-      'Actively exploring AI, web development, and startup/product development through independent projects, research, and practical builds.',
+      'Hands-on development of modern web applications and foundational machine learning pipelines through continuous project experimentation.',
     metric: '100%',
     metricLabel: 'Hands-on Learning',
   },
@@ -184,7 +182,7 @@ export const educationData = [
     period: 'Aug 2025 – Present',
     status: 'In Progress',
     details:
-      'Specializing in Artificial Intelligence & Machine Learning. Coursework covering Data Structures, OOP in C++, Database Management, Computer Networks, and Full-Stack Web Development.',
+      'Specializing in Artificial Intelligence & Machine Learning. Core coursework in Data Structures, OOP in C++, Database Management Systems, and Web Engineering.',
   },
   {
     id: 2,
@@ -195,7 +193,7 @@ export const educationData = [
     period: 'Apr 2024 – Mar 2025',
     status: 'Completed',
     details:
-      'Senior secondary education focusing on Physics, Chemistry, Mathematics, and Computer Science fundamentals.',
+      'Senior secondary curriculum focusing on Physics, Chemistry, Mathematics, and Computer Science fundamentals.',
   },
   {
     id: 3,
@@ -206,7 +204,7 @@ export const educationData = [
     period: 'Apr 2022 – Mar 2023',
     status: 'Completed',
     details:
-      'Strong academic foundation across Mathematics, Science, and Social Sciences under CBSE curriculum.',
+      'Strong academic record with foundational coursework across Mathematics, Science, and Social Sciences.',
   },
 ];
 

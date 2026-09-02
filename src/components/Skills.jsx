@@ -1,106 +1,121 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Globe, Database, Users } from 'lucide-react';
-import { skillsData } from '../data/portfolioData';
-import TerminalHeading from './TerminalHeading';
+import { toolboxCategories } from '../data/portfolioData';
 
 export default function Skills() {
-  const [activeTooltip, setActiveTooltip] = useState(null);
-
-  const getCategoryIcon = (category) => {
-    switch (category) {
-      case 'Languages':
-        return <Code className="w-4 h-4 text-[#C2542D]" />;
-      case 'Web Technologies':
-        return <Globe className="w-4 h-4 text-[#C2542D]" />;
-      case 'Databases & Tools':
-        return <Database className="w-4 h-4 text-[#C2542D]" />;
-      default:
-        return <Users className="w-4 h-4 text-[#C2542D]" />;
-    }
-  };
-
   return (
-    <section id="skills" className="py-20 sm:py-24 border-t border-[#E5E2DC] relative">
-      <div className="editorial-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Monospace Tag & Section Title */}
-          <TerminalHeading
-            tag="// skills"
-            title="Technical Arsenal"
-            subtitle="Categorized skill badges with proficiency context. Hover over any tag to view details."
-          />
+    <section id="skills" className="py-16 sm:py-20 border-b border-[#E5E2DC]">
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.5 }}
+        className="space-y-8"
+      >
+        {/* Section Header with Monospace Numbered Index */}
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-xs text-[#C2542D] font-bold uppercase tracking-widest">
+            // 02. capabilities
+          </span>
+          <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
+          <span className="font-mono text-xs text-[#8A8A8A]">
+            TECH ARSENAL
+          </span>
+        </div>
 
-          {/* 4 Categories Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skillsData.map((categoryGroup, groupIdx) => (
-              <div
-                key={groupIdx}
-                className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] hover:border-[#C2542D] transition-colors shadow-xs hover:shadow-md"
-              >
-                {/* Category Header */}
-                <div className="flex items-center justify-between pb-3 mb-5 border-b border-[#E5E2DC]">
-                  <div className="flex items-center gap-2.5">
-                    {getCategoryIcon(categoryGroup.category)}
-                    <h3 className="text-sm font-heading font-semibold text-[#1A1A1A]">
-                      {categoryGroup.category}
-                    </h3>
-                  </div>
-                  <span className="font-mono text-[11px] text-[#C2542D] font-medium">
-                    {categoryGroup.tag}
-                  </span>
-                </div>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#1A1A1A] tracking-tight">
+            02 — The Toolbox
+          </h2>
+          <p className="font-mono text-xs text-[#8A8A8A]">
+            * Size denotes core depth & frequency of use
+          </p>
+        </div>
 
-                {/* Skill Pill Badges */}
-                <div className="flex flex-wrap gap-2.5">
-                  {categoryGroup.items.map((skill, skillIdx) => {
-                    const tooltipKey = `${groupIdx}-${skillIdx}`;
-                    const isTooltipOpen = activeTooltip === tooltipKey;
+        {/* Editorial Toolbox Grid */}
+        <div className="space-y-8">
+          {toolboxCategories.map((group, groupIdx) => (
+            <div
+              key={groupIdx}
+              className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs hover:border-[#C2542D] transition-all"
+            >
+              {/* Category Annotation Header */}
+              <div className="pb-4 mb-6 border-b border-[#E5E2DC] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <span className="font-mono text-xs font-bold text-[#C2542D] uppercase tracking-wider">
+                  {group.label}
+                </span>
+                <span className="font-body text-xs text-[#8A8A8A]">
+                  {group.description}
+                </span>
+              </div>
 
+              {/* Varied Text Size / Intentional Editorial Hierarchy Grid */}
+              <div className="flex flex-wrap items-baseline gap-x-6 gap-y-5">
+                {group.skills.map((skill, sIdx) => {
+                  if (skill.weight === 'primary') {
                     return (
                       <div
-                        key={skillIdx}
-                        className="relative"
-                        onMouseEnter={() => setActiveTooltip(tooltipKey)}
-                        onMouseLeave={() => setActiveTooltip(null)}
-                        onFocus={() => setActiveTooltip(tooltipKey)}
-                        onBlur={() => setActiveTooltip(null)}
+                        key={sIdx}
+                        className="group relative cursor-default transition-transform hover:-translate-y-0.5"
                       >
-                        <button
-                          type="button"
-                          className="px-3.5 py-1.5 rounded-full font-mono text-xs border border-[#E5E2DC] bg-[#FAFAF8] text-[#1A1A1A] hover:border-[#C2542D] hover:text-[#C2542D] hover:bg-[#C2542D]/5 focus:border-[#C2542D] focus:outline-none transition-all flex items-center gap-2 cursor-pointer shadow-xs"
-                        >
-                          <span>{skill.name}</span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#C2542D]/60" />
-                        </button>
-
-                        {/* Subtle Hover Tooltip */}
-                        {isTooltipOpen && (
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-30 w-52 p-2.5 rounded-lg bg-[#FFFFFF] border border-[#C2542D]/40 text-[#1A1A1A] shadow-lg pointer-events-none animate-in fade-in-0 zoom-in-95 duration-150">
-                            <div className="font-mono text-[11px] text-[#C2542D] font-bold mb-0.5">
-                              {skill.level}
-                            </div>
-                            <div className="text-[11px] font-body text-[#3F3F3F] leading-tight">
-                              {skill.tooltip}
-                            </div>
-                            {/* Arrow Pointer */}
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#FFFFFF]" />
-                          </div>
-                        )}
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-2xl sm:text-3xl font-heading font-black text-[#1A1A1A] group-hover:text-[#C2542D] transition-colors">
+                            {skill.name}
+                          </span>
+                          <span className="text-[10px] font-mono text-[#C2542D] font-bold px-2 py-0.5 rounded-full bg-[#C2542D]/10">
+                            Core
+                          </span>
+                        </div>
+                        <span className="font-mono text-[11px] text-[#8A8A8A] block mt-0.5">
+                          {skill.note}
+                        </span>
                       </div>
                     );
-                  })}
-                </div>
+                  }
+
+                  if (skill.weight === 'secondary') {
+                    return (
+                      <div
+                        key={sIdx}
+                        className="group relative cursor-default transition-transform hover:-translate-y-0.5"
+                      >
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-lg sm:text-xl font-heading font-bold text-[#1A1A1A] group-hover:text-[#C2542D] transition-colors">
+                            {skill.name}
+                          </span>
+                          <span className="text-[10px] font-mono text-[#8A8A8A]">
+                            // {skill.experience}
+                          </span>
+                        </div>
+                        <span className="font-mono text-[11px] text-[#8A8A8A] block mt-0.5">
+                          {skill.note}
+                        </span>
+                      </div>
+                    );
+                  }
+
+                  // Tertiary
+                  return (
+                    <div
+                      key={sIdx}
+                      className="group relative cursor-default transition-transform hover:-translate-y-0.5 opacity-80 hover:opacity-100"
+                    >
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-sm font-heading font-semibold text-[#3F3F3F] group-hover:text-[#C2542D] transition-colors">
+                          {skill.name}
+                        </span>
+                      </div>
+                      <span className="font-mono text-[10px] text-[#8A8A8A] block">
+                        {skill.note}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

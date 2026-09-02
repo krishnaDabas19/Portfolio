@@ -4,7 +4,6 @@ import { Copy, Check, Send } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 import Toast from './Toast';
-import TerminalHeading from './TerminalHeading';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -43,7 +42,7 @@ export default function Contact() {
     }
 
     setIsSubmitting(true);
-    console.log('📬 Contact Form Submission Payload:', formData);
+    console.log('📬 Contact Form Submission:', formData);
 
     setTimeout(() => {
       setIsSubmitting(false);
@@ -54,227 +53,228 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 border-t border-[#E5E2DC] relative">
-      {/* Toast popup */}
+    <section id="contact" className="py-16 sm:py-20">
       <Toast
         message="Email copied to clipboard!"
         isVisible={toastOpen}
         onClose={() => setToastOpen(false)}
       />
 
-      <div className="editorial-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
-        >
-          <TerminalHeading
-            tag="// contact"
-            title="Get in Touch"
-            subtitle="Open to internships, project collaborations, and intelligent full-stack builds."
-          />
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.5 }}
+        className="space-y-8"
+      >
+        {/* Section Header with Monospace Numbered Index */}
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-xs text-[#C2542D] font-bold uppercase tracking-widest">
+            // 05. initiate
+          </span>
+          <div className="h-[1px] flex-1 bg-[#E5E2DC]" />
+          <span className="font-mono text-xs text-[#8A8A8A]">
+            DIRECT REACH
+          </span>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {/* Left Column: Direct Details */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] space-y-5 shadow-xs">
-                {/* Email Item with Copy */}
-                <div>
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] block mb-1">
-                    // Direct Email
-                  </span>
-                  <div className="flex items-center justify-between gap-2">
-                    <a
-                      href={`mailto:${personalInfo.email}`}
-                      className="text-xs sm:text-sm font-mono text-[#1A1A1A] hover:text-[#C2542D] break-all transition-colors"
-                    >
-                      {personalInfo.email}
-                    </a>
-                    <button
-                      onClick={handleCopyEmail}
-                      className="p-1.5 rounded-md border border-[#E5E2DC] bg-[#FAFAF8] text-[#8A8A8A] hover:text-[#C2542D] hover:border-[#C2542D]/50 transition-colors shrink-0 cursor-pointer shadow-xs"
-                      title="Copy Email Address"
-                      aria-label="Copy Email Address"
-                    >
-                      {copied ? (
-                        <Check className="w-4 h-4 text-[#C2542D]" />
-                      ) : (
-                        <Copy className="w-4 h-4" />
-                      )}
-                    </button>
-                  </div>
-                </div>
+        <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-[#1A1A1A] tracking-tight">
+          05 — Get in Touch
+        </h2>
 
-                {/* Phone Item */}
-                <div className="pt-4 border-t border-[#E5E2DC]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] block mb-1">
-                    // Phone Number
-                  </span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Direct Details Card */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs space-y-4">
+              {/* Email with Quick Copy */}
+              <div>
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] block mb-1">
+                  // Direct Email
+                </span>
+                <div className="flex items-center justify-between gap-2">
                   <a
-                    href={`tel:${personalInfo.phone}`}
-                    className="text-xs sm:text-sm font-mono text-[#1A1A1A] hover:text-[#C2542D] transition-colors"
+                    href={`mailto:${personalInfo.email}`}
+                    className="text-xs sm:text-sm font-mono text-[#1A1A1A] hover:text-[#C2542D] break-all transition-colors"
                   >
-                    {personalInfo.phone}
+                    {personalInfo.email}
                   </a>
-                </div>
-
-                {/* Location Item */}
-                <div className="pt-4 border-t border-[#E5E2DC]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] block mb-1">
-                    // Current Location
-                  </span>
-                  <span className="text-xs sm:text-sm font-mono text-[#8A8A8A]">
-                    {personalInfo.location}, India
-                  </span>
+                  <button
+                    onClick={handleCopyEmail}
+                    className="p-1.5 rounded-md border border-[#E5E2DC] bg-[#FAFAF8] text-[#8A8A8A] hover:text-[#C2542D] hover:border-[#C2542D]/50 transition-colors shrink-0 cursor-pointer shadow-xs"
+                    title="Copy Email Address"
+                    aria-label="Copy Email"
+                  >
+                    {copied ? (
+                      <Check className="w-4 h-4 text-[#C2542D]" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </button>
                 </div>
               </div>
 
-              {/* Social Channels Card */}
-              <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A] block mb-3">
-                  // Social Profiles
+              {/* Phone */}
+              <div className="pt-3 border-t border-[#E5E2DC]">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] block mb-1">
+                  // Phone Number
                 </span>
-                <div className="flex flex-col gap-3">
-                  <a
-                    href={personalInfo.socials.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors group"
-                  >
-                    <GithubIcon className="w-4 h-4 text-[#C2542D] group-hover:scale-110 transition-transform" />
-                    <span>github.com/dabaskrishna</span>
-                  </a>
+                <a
+                  href={`tel:${personalInfo.phone}`}
+                  className="text-xs sm:text-sm font-mono text-[#1A1A1A] hover:text-[#C2542D] transition-colors"
+                >
+                  {personalInfo.phone}
+                </a>
+              </div>
 
-                  <a
-                    href={personalInfo.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors group"
-                  >
-                    <LinkedinIcon className="w-4 h-4 text-[#C2542D] group-hover:scale-110 transition-transform" />
-                    <span>linkedin.com/in/krishna-dabas</span>
-                  </a>
-                </div>
+              {/* Location */}
+              <div className="pt-3 border-t border-[#E5E2DC]">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-[#C2542D] block mb-1">
+                  // Location
+                </span>
+                <span className="text-xs sm:text-sm font-mono text-[#8A8A8A]">
+                  {personalInfo.location}, India
+                </span>
               </div>
             </div>
 
-            {/* Right Column: Working Contact Form */}
-            <div className="lg:col-span-3">
-              <form
-                onSubmit={handleSubmit}
-                className="p-6 sm:p-8 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] space-y-4 shadow-xs"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Name Input */}
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
-                    >
-                      Name <span className="text-[#C2542D]">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all shadow-xs"
-                    />
-                  </div>
+            {/* Social Profiles */}
+            <div className="p-6 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs space-y-3">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A] block">
+                // Professional Profiles
+              </span>
+              <div className="space-y-2.5">
+                <a
+                  href={personalInfo.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors"
+                >
+                  <GithubIcon className="w-4 h-4 text-[#C2542D]" />
+                  <span>github.com/dabaskrishna</span>
+                </a>
+                <a
+                  href={personalInfo.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-mono text-[#8A8A8A] hover:text-[#C2542D] transition-colors"
+                >
+                  <LinkedinIcon className="w-4 h-4 text-[#C2542D]" />
+                  <span>linkedin.com/in/krishna-dabas</span>
+                </a>
+              </div>
+            </div>
+          </div>
 
-                  {/* Email Input */}
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
-                    >
-                      Email <span className="text-[#C2542D]">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your.email@example.com"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all shadow-xs"
-                    />
-                  </div>
-                </div>
-
-                {/* Subject Input */}
+          {/* Contact Form */}
+          <div className="lg:col-span-7">
+            <form
+              onSubmit={handleSubmit}
+              className="p-6 sm:p-7 rounded-2xl border border-[#E5E2DC] bg-[#FFFFFF] shadow-xs space-y-4"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
-                    htmlFor="subject"
-                    className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
+                    htmlFor="name"
+                    className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1"
                   >
-                    Subject
+                    Name <span className="text-[#C2542D]">*</span>
                   </label>
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
-                    placeholder="Internship opportunity / Collaboration / Quick hello"
-                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all shadow-xs"
+                    placeholder="Your name"
+                    required
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs font-sans text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all shadow-xs"
                   />
                 </div>
 
-                {/* Message Input */}
                 <div>
                   <label
-                    htmlFor="message"
-                    className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1.5"
+                    htmlFor="email"
+                    className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1"
                   >
-                    Message <span className="text-[#C2542D]">*</span>
+                    Email <span className="text-[#C2542D]">*</span>
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
-                    placeholder="Tell me about your project, idea, or role..."
+                    placeholder="your.email@domain.com"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs sm:text-sm text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all resize-y shadow-xs"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs font-sans text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all shadow-xs"
                   />
                 </div>
+              </div>
 
-                {errorMessage && (
-                  <p className="text-xs text-rose-500 font-mono">
-                    {errorMessage}
-                  </p>
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Internship opportunity / Collaboration"
+                  className="w-full px-3.5 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs font-sans text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all shadow-xs"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-xs font-mono uppercase tracking-wider text-[#8A8A8A] mb-1"
+                >
+                  Message <span className="text-[#C2542D]">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Share details about your project or role..."
+                  required
+                  className="w-full px-3.5 py-2.5 rounded-lg border border-[#E5E2DC] bg-[#FAFAF8] text-xs font-sans text-[#1A1A1A] placeholder-[#8A8A8A] focus:border-[#C2542D] focus:outline-none transition-all resize-y shadow-xs"
+                />
+              </div>
+
+              {errorMessage && (
+                <p className="text-xs text-rose-500 font-mono">
+                  {errorMessage}
+                </p>
+              )}
+
+              <div className="pt-2 flex items-center justify-between">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#C2542D] hover:bg-[#A8421F] text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-md shadow-[#C2542D]/20 disabled:opacity-50 cursor-pointer active:scale-95 transition-all"
+                >
+                  <Send className="w-3.5 h-3.5" />
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                </button>
+
+                {submitted && (
+                  <span className="text-xs font-mono text-[#C2542D] flex items-center gap-1.5 font-semibold">
+                    <Check className="w-4 h-4 text-[#C2542D]" />
+                    Message sent!
+                  </span>
                 )}
-
-                {/* Submit Action Button */}
-                <div className="pt-2 flex items-center justify-between">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#C2542D] hover:bg-[#A8421F] text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-md shadow-[#C2542D]/20 disabled:opacity-50 cursor-pointer active:scale-95 transition-all"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                  </button>
-
-                  {submitted && (
-                    <span className="text-xs font-mono text-[#C2542D] flex items-center gap-1.5 font-medium">
-                      <Check className="w-4 h-4 text-[#C2542D]" />
-                      Message dispatched!
-                    </span>
-                  )}
-                </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
