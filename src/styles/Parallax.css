@@ -1,0 +1,59 @@
+/* Parallax Scrolling Effects */
+
+/* Hero section parallax background */
+.hero::before,
+.hero::after {
+  transform: translateY(calc(var(--scroll) * 0.5px));
+  will-change: transform;
+}
+
+/* Projects background parallax */
+.projects::before {
+  transform: translateY(calc(var(--scroll) * 0.3px));
+  will-change: transform;
+}
+
+/* Skills background parallax */
+.skills::after {
+  transform: translateY(calc(var(--scroll) * 0.4px));
+  will-change: transform;
+}
+
+/* About background parallax */
+.about::before {
+  transform: translateY(calc(var(--scroll) * 0.35px));
+  will-change: transform;
+}
+
+/* Contact background parallax */
+.contact::before {
+  transform: translateY(calc(var(--scroll) * 0.25px));
+  will-change: transform;
+}
+
+/* Subtle parallax on cards */
+.project-card,
+.skill-category,
+.achievement-card,
+.education-item,
+.testimonial-card {
+  transform: translateY(calc(var(--scroll-offset, 0) * 0.02px));
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after,
+  .projects::before,
+  .skills::after,
+  .about::before,
+  .contact::before,
+  .project-card,
+  .skill-category,
+  .achievement-card,
+  .education-item,
+  .testimonial-card {
+    transform: none;
+    will-change: auto;
+  }
+}

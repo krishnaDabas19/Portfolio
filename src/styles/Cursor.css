@@ -1,0 +1,67 @@
+/* Custom Cursor Styles */
+:root {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="2" fill="%230096ff"/></svg>') 16 16, auto;
+}
+
+/* Custom cursor for interactive elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+textarea {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%230096ff"/><circle cx="16" cy="16" r="2.5" fill="white"/></svg>') 16 16, pointer;
+}
+
+/* Custom cursor for text */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  cursor: text;
+}
+
+/* Cursor-following effect container */
+.cursor-follow {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #0096ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.cursor-follow.visible {
+  opacity: 0.6;
+}
+
+.cursor-follow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #0096ff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .cursor-follow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-follow {
+    display: none;
+  }
+}

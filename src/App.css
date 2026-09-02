@@ -1,0 +1,10 @@
+/* Main App Shell */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
