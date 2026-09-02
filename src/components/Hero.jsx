@@ -47,8 +47,8 @@ export default function Hero() {
             <HeroSvgBrackets />
 
             <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 pt-2">
-              {/* Profile Photo (Modest ~110px softly-rounded square with Burnt Amber border) */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-2 border-[#BF5B2E] overflow-hidden bg-[#FFFFFF] shadow-xs shrink-0">
+              {/* Profile Photo (Enlarged softly-rounded square with Burnt Amber border) */}
+              <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-3xl border-2 border-[#BF5B2E] overflow-hidden bg-[#FFFFFF] shadow-sm hover:shadow-md transition-all shrink-0">
                 <img
                   src={imgSrc}
                   alt={personalInfo.name}
@@ -56,6 +56,7 @@ export default function Hero() {
                   onError={() => setImgSrc(profilePhoto)}
                 />
               </div>
+
 
               {/* Heading */}
               <div>
